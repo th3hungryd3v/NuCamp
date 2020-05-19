@@ -1,0 +1,6 @@
+{
+    "files.autoSaveDelay": 500,
+    "editor.fontSize": 16,
+    "editor.fontFamily": "\"Fira Code\", Consolas, 'Courier New', monospace",
+    "editor.renderWhitespace": "all"
+}
