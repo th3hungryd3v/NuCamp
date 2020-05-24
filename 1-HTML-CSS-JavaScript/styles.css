@@ -1,5 +1,5 @@
 html {
-    background: url(/Week-1/images/2x-ninja-tune-slipmats-main.jpg) cover;
+    background: url("images/2x-ninja-tune-slipmats-main.jpg");
     background-size: 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
