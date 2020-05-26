@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tables</title>
+    <title>HTML Tables</title>
+
+    <style>
+        html {
+            background-image: linear-gradient(90deg, #1d1b42 0%, #090979 35%, #3bcfec 100%);
+            color: #fff;
+        }
+        table {
+            border: dotted aqua;
+        }
+
+    </style>
+
 </head>
+
 <body>
-    <table> <!-- Table Element-->
-        <thead> 
-            <tr>
-                <th>Table Header 1</th> 
-                <th>Table Header 2</th>
-                <th>Table Header 3</th>
+    <table> <!-- All HTML Tables start with this -->
+        <thead> <!-- Table Head(er) -->
+            <tr>    <!-- Table Row -->
+                <th>Table Header 1</th> <!-- Table headers within the row-->
+                <th>Table Header 2</th> 
+                <th>Table Header 3</th> 
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Table Data 1</td>
+                <td>Table Data 1</td> <!-- Table Data within the row -->
                 <td>Table Data 2</td>
                 <td>Table Data 3</td>
             </tr>
@@ -26,6 +40,7 @@
                 <td>Table Data Second row 3</td>
             </tr>
         </tbody>
-    </table>
+    </table> <!--   -->
 </body>
+
 </html>
