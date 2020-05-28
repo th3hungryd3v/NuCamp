@@ -2,29 +2,33 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Survey Form</title>
+    <link rel="stylesheet" href="css/survey.css">
 </head>
 
 <body>
     <h1>Survey</h1>
-    <form action="https://learn.nucamp.co/show_everything.php" method="POST">
+    <form class="survey-form" action="https://learn.nucamp.co/show_everything.php" method="POST">
         <fieldset>
             <legend>Your Information</legend>
             <div>
                 <label>
-                    First Name: <input type="text" name="firstName" placeholder="Your First Name">
+                    First Name:
+                    <input type="text" name="firstName" placeholder="Your First Name" />
                 </label>
             </div>
             <div>
                 <label>
-                    Last Name: <input type="text" name="lastName" placeholder="Your Last Name">
+                    Last Name:
+                    <input type="text" name="lastName" placeholder="Your Last Name" />
                 </label>
             </div>
             <div>
                 <label>
-                    Your Email: <input type="text" name="email" placeholder="Your Email Address" required>
+                    Your Email:
+                    <input type="text" name="email" placeholder="Your Email Address" required />
                 </label>
             </div>
         </fieldset>
@@ -39,23 +43,20 @@
                     <input type="radio" name="sport" value="rugby" /> Rugby
                 </label>
                 <label>
-                    <input type="radio" name="sport" value="snowboarding" /> Snowboarding
+                    <input type="radio" name="sport" value="snowboarding" />
+                    Snowboarding
                 </label>
             </div>
             <div>
                 Your Pets:
-                <label>
-                    <input type="checkbox" name="pets" value="cat" /> Cat
-                </label>
-                <label>
-                    <input type="checkbox" name="pets" value="dog" /> Dog
-                </label>
+                <label> <input type="checkbox" name="pets" value="cat" /> Cat </label>
+                <label> <input type="checkbox" name="pets" value="dog" /> Dog </label>
                 <label>
                     <input type="checkbox" name="pets" value="iguana" /> Iguana
                 </label>
             </div>
         </fieldset>
-        <input type="submit" />
+        <input type="submit" id="submit-btn" />
     </form>
 </body>
 
