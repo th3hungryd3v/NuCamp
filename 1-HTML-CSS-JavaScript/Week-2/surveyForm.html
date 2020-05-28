@@ -12,11 +12,32 @@
     <form action="https://learn.nucamp.co/show_everything.php" method="POST">
         <fieldset>
             <legend>Your Information</legend>
-            
+            <div>
+                First Name: <input type="text" name="firstName" placeholder="Your First Name">
+            </div>
+            <div>
+                Last Name: <input type="text" name="lastName" placeholder="Your Last Name">
+            </div>
+            <div>
+                Your Email: <input type="text" name="email" placeholder="Your Email Address">
+            </div>
         </fieldset>
         <fieldset>
             <legend>Survey Questions</legend>
+            <div>
+                Favorite Sport:
+                <input type="radio" name="sport" value="baseball" /> Baseball
+                <input type="radio" name="sport" value="rugby" /> Rugby
+                <input type="radio" name="sport" value="snowboarding" /> Snowboarding
+            </div>
+            <div>
+                Your Pets:
+                <input type="checkbox" name="pets" value="cat" /> Cat
+                <input type="checkbox" name="pets" value="dog" /> Dog
+                <input type="checkbox" name="pets" value="iguana" /> Iguana
+            </div>
         </fieldset>
+        <input type="submit" />
     </form>
 </body>
 
