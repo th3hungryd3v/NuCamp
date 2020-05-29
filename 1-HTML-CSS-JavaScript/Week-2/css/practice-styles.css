@@ -1,8 +1,39 @@
-body {
-    background: #b4eeca;
+
+
+html {
+    font-size: 3.3rem;
+    background-color: #00fff244;
     font-family: Tahoma, Arial, sans-serif;
 }
 
-h1 {
-    color:
+h1, h2 {
+    padding: 50px;
+    display: inline-block;
+    color: rgba(29, 24, 17, 0.692);
+    font-size: 4em;
+    font-family: "Lobster", Helvetica, serif;
+}
+
+table {
+    height: 100%;
+    width: 100%;
+}
+
+thead, label {
+
+    text-align: left;
+}
+
+label {
+    display: block;
+}
+
+#submit-btn {
+    display: block;
+}
+
+section {
+    margin: auto;
+    border: solid green 1px;
+    /* border-top: dotted cyan 2px; */
 }
