@@ -2,9 +2,10 @@
 
 html {
 <<<<<<< HEAD
+    background: url("");    
     background: rgb(0,91,36);
-    background: linear-gradient(0deg, rgba(0,91,36,0.835171568627451) 0%, rgba(94,231,235,1) 3%, rgba(111,236,207,1) 7%, rgba(82,250,123,1) 15%, rgba(4,255,249,1) 90%, rgba(0,150,150,1) 100%);
-    font-size: 5rem;
+    background: linear-gradient(0deg, rgba(0,91,36,0.835171568627451) 0%, rgba(94,231,235,1) 3%, rgba(111,236,207,1) 7%, rgba(82,250,123,1) 15%, rgba(4,255,249,1) 92%, rgba(0,150,150,1) 100%);
+    font-size: 120%;
     /* margin: auto; */
     /* width: 100vw% */
     /* background-color: hsla(177, 100%, 50%, 0.267); */
@@ -17,8 +18,8 @@ body {
 
 #main, h1 {
     color: rgba(29, 24, 17, 0.795);
-    margin-left: 4%;
-    margin-bottom: 0%;
+    /* margin-left: 4%; */
+    /* margin-bottom: 0%; */
     height: 100vh;
     font-size: 4em;
     font-family: "Lobster";
