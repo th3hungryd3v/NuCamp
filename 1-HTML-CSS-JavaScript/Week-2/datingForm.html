@@ -6,7 +6,7 @@
     <title>Dating Form</title>
 
     <style>
-        
+
     </style>
 
 </head>
@@ -16,14 +16,32 @@
         <fieldset>
             <legend>Your Face</legend>
             <div>
-                <label for="avatar">
-                    Upload Your Image:
-                    <input type="file" id="avatar" name="avatar" required> Image Preview:
-                    <img id="preview" width="500">
-                </label>
+                <label for="avatar">Upload Your Image:</label>
+                    <input type="file" id="avatar" name="avatar" required>
             </div>
+            Image Preview:
+            <img id="preview" width="500">
         </fieldset>
         <fieldset>
+            <legend>Your Details</legend>
+            <div>
+                <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+            </div>
+            <div>
+                <label>Gender:</label>
+                    <input type="radio" id="woman" name="gender" value="woman" required>
+                    <label for="woman">Woman</label>
+                    <input type="radio" id="man" name="gender" value="man">
+                <label for="man">Man</label>
+            </div>
+        </fieldset>
+    </form>        
+        
+        
+        
+        
+        <!-- <fieldset>
             <legend>Your Details:</legend>
             <div>
                 <label for="name">Name:</label>
@@ -76,6 +94,6 @@
                 </label>
             </div>
         </fieldset>
-    </form>
+    </form> -->
 </body>
 </html>
