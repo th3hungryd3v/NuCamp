@@ -1,119 +1,119 @@
 html {
-        background: rgb(0,91,36);
-        background: linear-gradient(0deg, rgba(0,91,36,0.835171568627451) 0%, rgba(94,231,235,1) 3%, rgba(111,236,207,1) 7%, rgba(82,250,123,1) 15%, rgba(4,255,249,1) 92%, rgba(0,150,150,1) 100%);
-        font-size: 120%;
-        font-family: "Lobster",Tahoma, Arial, sans-serif;
-    }
-    body {
-        box-sizing: border-box;
-        display: block;
-    }
+    background: rgb(0,91,36);
+    background: linear-gradient(0deg, rgba(0,91,36,0.835171568627451) 0%, rgba(94,231,235,1) 3%, rgba(111,236,207,1) 7%, rgba(82,250,123,1) 15%, rgba(4,255,249,1) 92%, rgba(0,150,150,1) 100%);
+    font-size: 120%;
+    font-family: "Lobster",Tahoma, Arial, sans-serif;
+}
+body {
+    box-sizing: border-box;
+    display: block;
+}
+
+#main, h1 {
+    color: rgba(29, 24, 17, 0.795);
+    /* margin-left: 4%; */
+    /* margin-bottom: 0%; */
+    height: 100vh;
+    font-size: 4em;
+    font-family: "Lobster";
+}
+
+#menu {
+    margin-left: 25%;
+    margin-bottom: 0%;
+    margin-top: 0%;
+    /* width: 100%; */
+}
+
+.subYourRev {
+    margin: auto;
+    font-size: 2.4em;
+    /* text-align: center; */
     
-    #main, h1 {
-        color: rgba(29, 24, 17, 0.795);
-        /* margin-left: 4%; */
-        /* margin-bottom: 0%; */
-        height: 100vh;
-        font-size: 4em;
-        font-family: "Lobster";
-    }
-    
-    #menu {
-        margin-left: 25%;
-        margin-bottom: 0%;
-        margin-top: 0%;
-        /* width: 100%; */
-    }
-    
-    .subYourRev {
-        margin: auto;
-        font-size: 2.4em;
-        /* text-align: center; */
-        
-    
-    }
-    section {
-        font-family: Condiment;
-        display: block;
-        width: 95%;
-        margin: auto;
-        border: solid green 1px;
-        /* border-top: dotted cyan 2px; */
-    }
-    
-    h2 {
-        /* text-align: center; */
-        /* padding-left: 50px; */
-        display: inline-block;
-        color: rgba(29, 24, 17, 0.693);
-        font-size: 350px;
-        display: box;
-        box-sizing: border-box;
-        /* font-size: ; */
-        /* margin: none; */
-        /* padding: ; */
-        background-color: #00fff244;
-        font-family: Verdana, Tahoma, Arial, sans-serif;
-    }
-    
-    h1, h2 { 
-        text-align: center;
-        display: inline-block;
-        width: 100vw;
-        color: rgba(29, 24, 17, 0.692);
-        font-size: 7em;
-        font-family: "Lobster", Helvetica, serif;
-    }
-    
-    table {
-        width: 90%;
-        margin-left: 10%;
-        height: 50%;
-        width:50%;
-    }
-    
-    thead, label {
-        display: block;
-        text-align: center;
-    }
-    
-    th td {
-        display: block;
-        width: 100vw;
-    
-        text-align: left;
-        /* margin: auto; */
-    }
-    
-    form {
-        display: block;
-        /* padding: 0% 30px; */
-    }
-    
-    input {
-        text-align: center;
-        margin: auto;
-        /* display: inline-block; */
-        /* width: 330px; */
-        height: 33px;
-        /* padding: 0px 30px; */
-    }
-    
-    label, input {
-        display: block;
-        height: 36px;
-        width: 600px;
-    }
-    
-    #submit-btn {
-        font-size: 50px;
-        height: 80px;
-        background-color: rgb(140, 243, 255);
-        margin: auto;
-    }
-    
-    section {
-        /* margin-bottom: 3rem; */
-        border: solid green 1px;
-        /* border-top: dotted cyan 2px; */
-    }
+
+}
+section {
+    font-family: Condiment;
+    display: block;
+    width: 95%;
+    margin: auto;
+    border: solid green 1px;
+    /* border-top: dotted cyan 2px; */
+}
+
+h2 {
+    /* text-align: center; */
+    /* padding-left: 50px; */
+    display: inline-block;
+    color: rgba(29, 24, 17, 0.693);
+    font-size: 350px;
+    display: box;
+    box-sizing: border-box;
+    /* font-size: ; */
+    /* margin: none; */
+    /* padding: ; */
+    background-color: #00fff244;
+    font-family: Verdana, Tahoma, Arial, sans-serif;
+}
+
+h1, h2 { 
+    text-align: center;
+    display: inline-block;
+    width: 100vw;
+    color: rgba(29, 24, 17, 0.692);
+    font-size: 7em;
+    font-family: "Lobster", Helvetica, serif;
+}
+
+table {
+    width: 90%;
+    margin-left: 10%;
+    height: 50%;
+    width:50%;
+}
+
+thead, label {
+    display: block;
+    text-align: center;
+}
+
+th td {
+    display: block;
+    width: 100vw;
+
+    text-align: left;
+    /* margin: auto; */
+}
+
+form {
+    display: block;
+    /* padding: 0% 30px; */
+}
+
+input {
+    text-align: center;
+    margin: auto;
+    /* display: inline-block; */
+    /* width: 330px; */
+    height: 33px;
+    /* padding: 0px 30px; */
+}
+
+label, input {
+    display: block;
+    height: 36px;
+    width: 600px;
+}
+
+#submit-btn {
+    font-size: 50px;
+    height: 80px;
+    background-color: rgb(140, 243, 255);
+    margin: auto;
+}
+
+section {
+    /* margin-bottom: 3rem; */
+    border: solid green 1px;
+    /* border-top: dotted cyan 2px; */
+}
