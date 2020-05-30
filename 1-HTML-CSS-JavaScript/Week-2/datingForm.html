@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dating Form</title>
+
+    <style>
+        
+    </style>
+
+</head>
+<body>
+    <h1>Enter Your Details For Our Dating Site</h1>
+    <form action="https://learn.nucamp.co/show_everything.php" method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Your Face</legend>
+            <div>
+                <label for="avatar">
+                    Upload Your Image:
+                    <input type="file" id="avatar" name="avatar" required> Image Preview:
+                    <img id="preview" width="500">
+                </label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Your Details:</legend>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+            </div>
+            <div>
+            <label for="gender">Gender:</label>
+                <label for="woman">
+                    <input type="radio" id="woman" name="gender" value="woman" required>
+                    Woman
+            </label>
+                <label for="man">
+                    <input type="radio" id="man" name="gender" value="man">
+                    Man
+                </label>
+            </div>
+            <div>
+                <label for="age">
+                    Age:
+                    <input type="number" id="age" name="age">
+                </label>
+            </div>
+            <div>
+                <label for="dob">Date Of Birth:
+                    <input type="date" id="dob" name="dob">
+                </label>
+            </div>
+            <div>
+                <label for="color">Favorite Color:
+                    <input type="color" id="color" name="color">
+                </label>
+            </div>
+            <div>
+                <label for="country">Country:
+                    <select name="country" id="country">Country:
+                        <option selected disabled>Choose a country</option>
+                        <option value="brazil">Brazil</option>
+                        <option value="france">France</option>
+                        <option value="japan">Japan</option>
+                        <option value="libya">Libya</option>
+                        <option value="usa">USA</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <label for="salary">Salary:
+                    <span class="range-caption">Poor</span>
+                    <input type="range" id="salary" name="salary" min="0" max="100" value="50">
+                    <span class="range-caption">Rich</span>
+                </label>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
