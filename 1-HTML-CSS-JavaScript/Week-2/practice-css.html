@@ -4,16 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/practice-styles.css">
     <title> CSS Practice: CSS Corner Cafe </title>
 </head>
 
 <body>
-    <h1> CSS Corner Cafe </h1>
+    <h1 id="main"> CSS Corner Cafe </h1>
     <section>
         <hr>
-        <h2> Menu </h2>
+        <h2 id="menu"> Menu </h2>
         <table>
             <thead>
                 <tr>
@@ -42,7 +43,7 @@
         </table>
     </section>
     <section>
-        <h2>Submit Your Review</h2>
+        <h2 class="subYourRev">Submit Your Review</h2>
         <form action="https://learn.nucamp.co/show_everything.php" method="post">
             <label>
                 Name
@@ -52,13 +53,13 @@
                 Your Rating
                 <input type="range" value="rating" min="1" max="5">
             </label>
-            <input type="submit" id="submit-btn">
+            <input type="submit" id="submit-btn" value="Submit">
         </form>
     </section>
-    <section>
-        <h2>Contact</h2>
+    <section id="contact">
+        <h2 class="contact">Contact</h2>
         <p>
-            Call us at: <a href="tel:+155555551212"> </a>
+            Call us at: <a href="tel:+155555551212">(555)555-5121 </a>
         </p>
         <address>
             CSS Corner Cafe <br>
