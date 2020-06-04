@@ -24,6 +24,9 @@ function runGame() {
             // this is where the conversion from string to number takes place
             // this takes the return value from the prompt guessString converts it to a number and saves that number in guessNumber
             guessNumber = +guessString;
+            // this will keep track of how many guesses it took to guess the correct number
+            // every incorrect guess will add 1
+            numTries +=1
             // this function will check the correct value from the checkGuess() function below
             correct = checkGuess(guessNumber, target);
         // this will keep repeating the loop as long as the answer is false (!correct)
