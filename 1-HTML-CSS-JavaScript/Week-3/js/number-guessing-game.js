@@ -33,6 +33,9 @@ function runGame() {
         // this is waiting for correct to be true; once the player guesses the right number, the return value from the checkGuess() function
         // will change the !correct to correct and the loop exits and the game ends.
         } while (!correct);
+        // if they guessed correctly:
+        // alert the user and also print how many times it took to guess the correct number
+        alert('Congratulations!\n\nThe number was ' + target + '.\n\nIt took you ' + numTries + ' tries!')
 }
 // CHECK THE PLAYER'S GUESS
 // this will receive values from the local variables from the rungame() function where it is called
