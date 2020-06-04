@@ -31,3 +31,10 @@
 // groceryList[2] ==> 'salad'
 
 // Modifying Array Items
+// If you know the index for the item you would like to replace, you can do so like this:
+// groceryList[0] = 'bananas';
+// groceryList[2] = 'soap';
+// the new Array would now look like this:
+// const groceryList = ['bananas','coffee beans','soap'];
+
+// Array Property: Length
