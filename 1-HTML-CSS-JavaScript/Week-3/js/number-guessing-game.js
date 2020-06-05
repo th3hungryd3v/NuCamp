@@ -15,11 +15,13 @@ function runGame() {
     const randomInteger = Math.floor(randomNumber);
     // this takes the return value of randomInteger and our range is between 1 - 100 (previously 0 - 99)
     const target = randomInteger + 1;
-
-
     // shorthand: const target = Math.floor(Math.random() * 100) + 1;
+
+
     // GET GUESS FROM PLAYER & STORE IT IN A VARIABLE
         do {
+            // a prompt will pop up when the button is clicked
+            //  whatever the user enters gets sent to the checkGuess() function
             guessString = prompt("I'm thinking of a number in the range of 1 - 100.\n\nWhat is the number?");
             // this is where the conversion from string to number takes place
             // this takes the return value from the prompt guessString converts it to a number and saves that number in guessNumber
