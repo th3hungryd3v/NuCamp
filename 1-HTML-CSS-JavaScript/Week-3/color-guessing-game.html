@@ -5,41 +5,75 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Color Guessing Game</title>
+    <style>
+        body {
+            background-color: rgba(0, 132, 255, 0.151);
+        }
+
+        h1 {
+            text-shadow: 12px 12px 10px rgba(1, 32, 44, 0.603);
+            background: linear-gradient(darkcyan, gold, gray, green, magenta, mediumspringgreen, orange, red, white, yellow);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* margin: auto; */
+            text-align: center;
+            font-size: 6.7rem;
+        }
+
+        button {
+            box-shadow: 10px 5px 5px rgb(48, 46, 46);
+            display: block;
+            border-radius: 12px;
+            /* border: solid black 1px; */
+            margin: 130px;
+            font-size: 5rem;
+            width: 80vw;
+        }
+
+        button:active {
+            /* border-radius: 5%; */
+            background-color: rgba(24, 24, 24, 0.342);
+            box-shadow: 0 0px rgba(255, 255, 255, 0.658);
+            transform: translateY(4px);
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Color Guessing Game</h1>
-    <button type="button" onclick="runGame()">Start Game</button>
+    <div>
+        <h1 class="gradient">Color Guessing Game</h1>
+        <button type="button" onclick="runGame()">Start Game</button>
 
-
+    </div>
     <script>
-        const COLORS_ARRAY = ['mediumspringgreen', 'magenta', 'gold', 'orange', 'green', 'red', 'gray', 'darkcyan', 'white', 'yellow']
+        const COLORS_ARRAY = ['springgreen', 'magenta', 'gold', 'orange', 'green', 'red', 'gray', 'cyan', 'white', 'yellow'];
         function runGame() {
 
             let guess = '';
             let correct = false;
             let numTries = 0;
-// GENERATE RANDOM NUMBER & STORE IT IN A VARIABLE SUCH AS targetIndex
+            // GENERATE RANDOM NUMBER & STORE IT IN A VARIABLE SUCH AS targetIndex
             const randomNumber = Math.random() * COLORS_ARRAY.length;
             const randomInteger = Math.floor(randomNumber);
             const targetIndex = randomInteger + 1;
-            //shorthand: const targetIndex = COLORS_ARRAY[Math.random(Math.floor() * COLORS_ARRAY.length) + 1];
-// FROM AN ARRAY OF COLOR NAMES TAKE THE ONE WITH THE ARRAY INDEX THAT MATCHES targetIndex
-// STORE THAT IN A VARIABLE SUCH AS TARGET
-const target = COLORS_ARRAY[targetIndex];
-// GET GUESS FROM PLAYER & STORE IT IN A VARIABLE SUCH AS guess
+            // FROM AN ARRAY OF COLOR NAMES TAKE THE ONE WITH THE ARRAY INDEX THAT MATCHES targetIndex
+            // STORE THAT IN A VARIABLE SUCH AS TARGET
+            const target = COLORS_ARRAY[targetIndex];
+            // GET GUESS FROM PLAYER & STORE IT IN A VARIABLE SUCH AS guess
             do {
                 COLORS_ARRAY.sort();
-                guess = prompt('I am thinking of one of these colors:\n\n' + COLORS_ARRAY.join(', ') + '\n\n What color am I thinking of?\n');
+                // In order to make an Array case insensitive you have to convert it to a string first
+                guess = prompt('I am thinking of one of these colors:\n\n' + COLORS_ARRAY.join(', ') + '\n\n What color am I thinking of?').toString().toLowerCase();
                 if (guess === null) {
                     alert("The game has been aborted.\n\nWould you like to try again?");
                     return;
 
                 }
-                correct = checkGuess(guess, target)
+                correct = checkGuess(guess, target);
                 numTries += 1;
             } while (!correct);
-            alert('Congratulations!\n\nYou guessed the right color!\n\nIt took you ' + numTries + ' tries to guess the color I was thinking about.')
+            alert('Congratulations!\n\nYou guessed the right color!\n\nIt took you ' + numTries + ' tries to guess the color I was thinking about.');
         }
         // GUESS NOT IN THE COLORS_ARRAY?
         function checkGuess(guess, target) {
