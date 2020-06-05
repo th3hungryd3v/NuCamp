@@ -13,40 +13,56 @@
 
 
     <script>
-        const COLORS_ARRAY = ['blue', 'cyan', 'gold', 'gray', 'green', 'magenta', 'orange', 'red', 'white', 'yellow']
+        const COLORS_ARRAY = ['mediumspringgreen', 'magenta', 'gold', 'orange', 'green', 'red', 'gray', 'darkcyan', 'white', 'yellow']
         function runGame() {
 
             let guess = '';
             let correct = false;
-
-
-            const targetIndex = COLORS_ARRAY[Math.random(Math.floor() * COLORS_ARRAY.length) + 1];
-            const target = COLORS_ARRAY[targetIndex];
-
+            let numTries = 0;
+// GENERATE RANDOM NUMBER & STORE IT IN A VARIABLE SUCH AS targetIndex
+            const randomNumber = Math.random() * COLORS_ARRAY.length;
+            const randomInteger = Math.floor(randomNumber);
+            const targetIndex = randomInteger + 1;
+            //shorthand: const targetIndex = COLORS_ARRAY[Math.random(Math.floor() * COLORS_ARRAY.length) + 1];
+// FROM AN ARRAY OF COLOR NAMES TAKE THE ONE WITH THE ARRAY INDEX THAT MATCHES targetIndex
+// STORE THAT IN A VARIABLE SUCH AS TARGET
+const target = COLORS_ARRAY[targetIndex];
+// GET GUESS FROM PLAYER & STORE IT IN A VARIABLE SUCH AS guess
             do {
-                guess = prompt('I am thinking of one of these colors:\n\n' + COLORS_ARRAY + '\n\n What color am I thinking of?\n');
+                COLORS_ARRAY.sort();
+                guess = prompt('I am thinking of one of these colors:\n\n' + COLORS_ARRAY.join(', ') + '\n\n What color am I thinking of?\n');
                 if (guess === null) {
                     alert("The game has been aborted.\n\nWould you like to try again?");
                     return;
 
                 }
                 correct = checkGuess(guess, target)
+                numTries += 1;
             } while (!correct);
-            alert('Congratulations!\n\nYou guessed the right color!')
+            alert('Congratulations!\n\nYou guessed the right color!\n\nIt took you ' + numTries + ' tries to guess the color I was thinking about.')
         }
-
+        // GUESS NOT IN THE COLORS_ARRAY?
         function checkGuess(guess, target) {
             let correct = false;
-            console.log(target)
-            if (guess !== COLORS_ARRAY.forEach(COLORS_ARRAY)) {
+            // If the guess is lower than the indexOf the COLORS_ARRAY:
+            if (COLORS_ARRAY.indexOf(guess) < 0) {
+                // ALERT PLAYER: COLOR NOT RECOGNIZED
                 alert('That is not one of the colors!\n\nPlease pick a color from the list!');
+                // GUESS GREATER THAN TARGET
+                // If guess is greater than target
             } else if (guess > target) {
-                alert('That guess is too high!')
+                // ALERT PLAYER: GUESS IS HIGHER THAN TARGET
+                alert('That guess is too high!');
+                // GUESS LESS THAN TARGET
+                // If guess is less than target
             } else if (guess < target) {
-                alert('Your guess is too low')
+                // ALERT PLAYER: GUESS IS LOWER THAN TARGET
+                alert('Your guess is too low');
+                // ELSE: CONGRATULATE THE PLAYER
             } else {
                 correct = true;
             }
+            document.body.style.background = guess;
             return correct;
         }
 
