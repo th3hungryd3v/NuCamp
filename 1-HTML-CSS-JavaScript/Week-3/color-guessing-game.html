@@ -16,7 +16,6 @@
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            /* margin: auto; */
             text-align: center;
             font-size: 6.7rem;
         }
@@ -25,29 +24,27 @@
             box-shadow: 10px 5px 5px rgb(48, 46, 46);
             display: block;
             border-radius: 12px;
-            /* border: solid black 1px; */
             margin: 130px;
             font-size: 5rem;
             width: 80vw;
         }
 
         button:active {
-            /* border-radius: 5%; */
             background-color: rgba(24, 24, 24, 0.342);
-            box-shadow: 0 0px rgba(255, 255, 255, 0.658);
+            box-shadow: 0 2px rgba(255, 255, 255, 0.658);
             transform: translateY(4px);
         }
     </style>
 </head>
 
 <body>
-    <div>
-        <h1 class="gradient">Color Guessing Game</h1>
-        <button type="button" onclick="runGame()">Start Game</button>
+    <h1>Color Guessing Game</h1>
+    <button type="button" onclick="runGame()">Start Game</button>
 
-    </div>
     <script>
+        // The Global Array accessible to any function
         const COLORS_ARRAY = ['springgreen', 'magenta', 'gold', 'orange', 'green', 'red', 'gray', 'cyan', 'white', 'yellow'];
+        // Start up the Color Guessing Game
         function runGame() {
 
             let guess = '';
@@ -57,23 +54,26 @@
             const randomNumber = Math.random() * COLORS_ARRAY.length;
             const randomInteger = Math.floor(randomNumber);
             const targetIndex = randomInteger + 1;
-            // shorthand const target = COLORS_ARRAY[Math.floor(Math.Random() * COLORS_ARRAY.length) + 1]
             // FROM AN ARRAY OF COLOR NAMES TAKE THE ONE WITH THE ARRAY INDEX THAT MATCHES targetIndex
             // STORE THAT IN A VARIABLE SUCH AS TARGET
             const target = COLORS_ARRAY[targetIndex];
             // GET GUESS FROM PLAYER & STORE IT IN A VARIABLE SUCH AS guess
             do {
-                COLORS_ARRAY.sort().toString();
-                // In order to make an Array case insensitive you have to convert it to a string first
+                // Alphabetically sort the items in the array
+                COLORS_ARRAY.sort();
+                // Prompt asking for input while also spacing out array with a comma and a space and then saving their input to the guess variable
                 guess = prompt('I am thinking of one of these colors:\n\n' + COLORS_ARRAY.join(', ') + '\n\n What color am I thinking of?');
                 if (guess === null) {
-                    alert("The game has been aborted.\n\nWould you like to try again?");
+                    alert("The game has been aborted.\n\nWould you like to start over?");
                     return;
-                    
-                } 
+
+                }
                 numTries += 1;
-                correct = checkGuess(guess, target);
+                // Convert all guesses from the prompt to lower case
+                correct = checkGuess(guess.toLowerCase(), target);
+                // While the guess isn't correct keep looping the prompt and sending their input to the checkGuess function 
             } while (!correct);
+            // If the player guesses the correct color, change the background to that color after they click Okay at the prompt
             document.body.style.background = guess;
             alert('Congratulations!\n\nYou guessed the right color!\n\nIt took you ' + numTries + ' tries to guess the color I was thinking about.');
         }
@@ -85,12 +85,10 @@
                 // ALERT PLAYER: COLOR NOT RECOGNIZED
                 alert('Sorry, I do not recognize your color.\n\nPlease try again.');
                 // GUESS GREATER THAN TARGET
-                // If guess is greater than target
             } else if (guess > target) {
                 // ALERT PLAYER: GUESS IS HIGHER THAN TARGET
                 alert('Sorry, your guess is incorrect.\n\nHint: your color is aplphabetically higher than mine.\n\nPlease try again.');
                 // GUESS LESS THAN TARGET
-                // If guess is less than target
             } else if (guess < target) {
                 // ALERT PLAYER: GUESS IS LOWER THAN TARGET
                 alert('Sorry, your guess is incorrect.\n\nHint: your color is alphabetically lower than mine.\n\nPlease try again.');
