@@ -57,22 +57,24 @@
             const randomNumber = Math.random() * COLORS_ARRAY.length;
             const randomInteger = Math.floor(randomNumber);
             const targetIndex = randomInteger + 1;
+            // shorthand const target = COLORS_ARRAY[Math.floor(Math.Random() * COLORS_ARRAY.length) + 1]
             // FROM AN ARRAY OF COLOR NAMES TAKE THE ONE WITH THE ARRAY INDEX THAT MATCHES targetIndex
             // STORE THAT IN A VARIABLE SUCH AS TARGET
             const target = COLORS_ARRAY[targetIndex];
             // GET GUESS FROM PLAYER & STORE IT IN A VARIABLE SUCH AS guess
             do {
-                COLORS_ARRAY.sort();
+                COLORS_ARRAY.sort().toString();
                 // In order to make an Array case insensitive you have to convert it to a string first
-                guess = prompt('I am thinking of one of these colors:\n\n' + COLORS_ARRAY.join(', ') + '\n\n What color am I thinking of?').toString().toLowerCase();
+                guess = prompt('I am thinking of one of these colors:\n\n' + COLORS_ARRAY.join(', ') + '\n\n What color am I thinking of?');
                 if (guess === null) {
                     alert("The game has been aborted.\n\nWould you like to try again?");
                     return;
-
-                }
-                correct = checkGuess(guess, target);
+                    
+                } 
                 numTries += 1;
+                correct = checkGuess(guess, target);
             } while (!correct);
+            document.body.style.background = guess;
             alert('Congratulations!\n\nYou guessed the right color!\n\nIt took you ' + numTries + ' tries to guess the color I was thinking about.');
         }
         // GUESS NOT IN THE COLORS_ARRAY?
@@ -81,22 +83,21 @@
             // If the guess is lower than the indexOf the COLORS_ARRAY:
             if (COLORS_ARRAY.indexOf(guess) < 0) {
                 // ALERT PLAYER: COLOR NOT RECOGNIZED
-                alert('That is not one of the colors!\n\nPlease pick a color from the list!');
+                alert('Sorry, I do not recognize your color.\n\nPlease try again.');
                 // GUESS GREATER THAN TARGET
                 // If guess is greater than target
             } else if (guess > target) {
                 // ALERT PLAYER: GUESS IS HIGHER THAN TARGET
-                alert('That guess is too high!');
+                alert('Sorry, your guess is incorrect.\n\nHint: your color is aplphabetically higher than mine.\n\nPlease try again.');
                 // GUESS LESS THAN TARGET
                 // If guess is less than target
             } else if (guess < target) {
                 // ALERT PLAYER: GUESS IS LOWER THAN TARGET
-                alert('Your guess is too low');
+                alert('Sorry, your guess is incorrect.\n\nHint: your color is alphabetically lower than mine.\n\nPlease try again.');
                 // ELSE: CONGRATULATE THE PLAYER
             } else {
                 correct = true;
             }
-            document.body.style.background = guess;
             return correct;
         }
 
