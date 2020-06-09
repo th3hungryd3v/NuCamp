@@ -1,0 +1,22 @@
+{
+  "name": "nucamp",
+  "version": "1.0.0",
+  "description": "NuCamp Base Directory",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/th3hungryd3v/NuCamp.git"
+  },
+  "author": "th3hungryd3v",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/th3hungryd3v/NuCamp/issues"
+  },
+  "homepage": "https://github.com/th3hungryd3v/NuCamp#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
