@@ -62,7 +62,7 @@
                 // Alphabetically sort the items in the array
                 COLORS_ARRAY.sort();
                 // Prompt asking for input while also spacing out array with a comma and a space and then saving their input to the guess variable
-                guess = prompt('I am thinking of one of these colors:\n\n' + COLORS_ARRAY.join(', ') + '\n\n What color am I thinking of?');
+                guess = prompt("I am thinking of one of these colors:\n\n' + COLORS_ARRAY.join(', ') + '\n\n What color am I thinking of?");
                 if (guess === null) {
                     alert("The game has been aborted.\n\nWould you like to start over?");
                     return;
@@ -73,6 +73,7 @@
                 correct = checkGuess(guess.toLowerCase(), target);
                 // While the guess isn't correct keep looping the prompt and sending their input to the checkGuess function 
             } while (!correct);
+                alert("this is try # " + numTries + ".")
             // If the player guesses the correct color, change the background to that color after they click Okay at the prompt
             document.body.style.background = guess;
             alert('Congratulations!\n\nYou guessed the right color!\n\nIt took you ' + numTries + ' tries to guess the color I was thinking about.');
