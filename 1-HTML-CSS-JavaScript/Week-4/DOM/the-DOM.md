@@ -30,7 +30,7 @@ When a browser loads an HTML document, it will internally represent it with the 
 </html>
 ```
 would look like this:
-![DOM TREE](../Week-1/images/DOM-tree.png?raw=true "DOM")
+![DOM TREE](../../Week-1/images/DOM-tree.png?raw=true "DOM")
 
 This is not entirely accurate, as whitespace is not included...
 
@@ -67,7 +67,7 @@ Here's another example using a \<table>:
     </body>
 </html>
 ```
-![Table](../Week-1/images/table.png?raw=true "Table")
+![Table](../../Week-1/images/table.png?raw=true "Table")
 
 Here's another example of Text Nodes that also have IDs:
 
@@ -87,7 +87,7 @@ Here's another example of Text Nodes that also have IDs:
 </html>
 
 ```
-![Text Nodes](../Week-1/images/text-nodes.png?raw=true "Text Nodes")
+![Text Nodes](../../Week-1/images/text-nodes.png?raw=true "Text Nodes")
 
 As you can see, attributes are part of the node and they are not given their own node.
 Notice that the "World" is now a Child node of the \<body> element because it's not nested inside of any element and it's also a Sibling of the \<p> element as the other text nodes are. 
@@ -109,7 +109,7 @@ The actual DOM representation of this:
 </html>
 ```
 Looks like this:
-![Whitespace Nodes](../Week-1/images/whitespace-nodes.png?raw=true "Whitespace Nodes")
+![Whitespace Nodes](../../Week-1/images/whitespace-nodes.png?raw=true "Whitespace Nodes")
 
 The whitespace that you see in the source code, which isn't shown in the browser become Text Nodes that are called **Whitespace** **Nodes**.
 
@@ -125,7 +125,7 @@ If it was written like this:
 ```
 The output would not have any Whitespace Nodes:
 
-![Whitespace Nodes](../Week-1/images/whitespace-nodes-sans.png?raw=true "Whitespace Nodes")
+![Whitespace Nodes](../../Week-1/images/whitespace-nodes-sans.png?raw=true "Whitespace Nodes")
 
 When writing JavaScript and interacting with the DOM you need to be aware that Whitespace Nodes exist, to run into less errors. 
 
