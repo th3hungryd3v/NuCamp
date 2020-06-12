@@ -1,3 +1,17 @@
+<!-- Accessing DOM Nodes in JavaScript Through Node Relationships -->
+<!-- Node Relationship Properties:
+        .parentNode - gives the parent of a node, 
+        .firstChild & .lastChild - gives the first and last child of a node,
+        .nextSibling - the very next sibling of a node, 
+        .previousSibling - immediate previous sibling of a node,
+        Note: There's only ever one parent node for each .next/.previous node
+        However, a node can have more than one child.
+        .childNodes[] - will give an iterable called a NodeList,
+        containing all child nodes of a node - use bracket notation
+        with the index to access each child in the list, ex. .childNodes[0] for the
+        first child, .childNodes[1] for the second child, etc..,-->
+<!-- A demo of traversing the DOM -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +30,17 @@
         }
     </style>
 </head>
-<body>
-    <h1>DOM Relationships Demo</h1>
+<!-- This will be our entry point: let node = document.body
+The variable can have any name but we'll use node for this demo
+document = the object that will be running the code
+.body = points the node to the body element inside the document 
+We can do this with the body node because there's only ever one valid body element in an HTML document.
+So, you couldn't do something like: document.div -->
+<!-- Now we have our entry point stored in a variable called node -->
+<!-- Note: Because all nodes are connected to all other nodes, we can access ALL the nodes in this document through this one, aka "Traversing the DOM"
+Meaning: Travelling the document via the node connections -->
+<body> <!-- let = node (Our entry point)-->
+    <h1>DOM Relationships Demo</h1> <!-- node.firstChild-->
     <p>
         Click on any element to see the DOM path to its node
     </p>
@@ -42,28 +65,36 @@
         </tbody>
     </table>
 
-    <script>e
+    <script>
         function handleClick(event) {
             event.stopPropagation();
-            let node = event.target;
-            let thisPath = node.nodeName;
-            while (node.parentNode) {
-                node = node.parentNode;
-                thisPath = node.nodeName + " > " + thisPath;
+            let node = event.target; // Takes an event(like a mouse click) and stores it in a variable called node
+            let thisPath = node.nodeName; // Takes the value of node while also grabbing the node name using the .nodeName and storing it in the variable thisPath
+            while (node.parentNode) { // while (as long as the node has a parent node)
+                node = node.parentNode; // We change the value of node to our parent node
+                thisPath = node.nodeName + " > " + thisPath; // Then we add the name of this new node to the thisPath string
             }
-            alert(thisPath);
+            alert(thisPath); // exit and show an alert with the content of the thisPath string
         }
 
-        function attachHandler(node) {
-            if (node === null) {
+       function attachHandler(node) { // In this 2nd function attachHandler() will 
+            if (node === null) { // if node is strictly equal to null
                 return;
             }
-            node.onclick = handleClick;
-            for (child of node.childNodes) {
-                attachHandler(child);
+            node.onclick = handleClick; // take every child of a given node and attach an onclick event handler to it
+            for (child of node.childNodes) { // for every iterable childNodes of the node variable iterate through it and attach the value to the child variable
+                attachHandler(child); // the function calls itself: the click event handler: inside the for loop: which means the child nodes are going to attach the onclick event handler to their child nodes,
+                //and their child nodes will attach the handler to their child nodes and so on until there are no more child nodes to attach to
+                // Note: this is a programming concept called 'recursion'
+                // recursion: when you call a function from within itself so that it can run multiple times in succession
+                // In this case, it helps us quickly attach the event handler to all the nodes in any branch of the DOM
+                // Which branch depends on what node you passed in as an argument 
             }
         }
-        attachHandler(document.body);
+        attachHandler(document.body);// call the function passing the 'document.body' node as an argument
+        // this is actually calling and running the function
+        // Notice that it's outside of the function
+        // When the page loads, this function will run and cause the onclick event handler to attach to every single node in the body branch of the DOM
     </script>
 </body>
 </html>
