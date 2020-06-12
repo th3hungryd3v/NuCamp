@@ -1,3 +1,14 @@
+<!-- Four ways to locate nodes -->
+<!-- Traversing the DOM -->
+
+<!-- getElementsByTagName() -->
+<!-- getElementById() -->
+<!-- querySelector() -->
+
+<!-- Modifying HTML element attributes -->
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,26 +23,55 @@
 <body>
     <h1>Locating Nodes Demo</h1>
     <p id="textToChange">Click on a button to change the color of this text.</p>
-    <button type="button" onclick="changeColor1()">Use DOM traversal</button>
-    <button type="button" onclick="changeColor2()">Use getElementsByTagName</button>
-    <button type="button" onclick="changeColor3()">Use getElementById</button>
-    <button type="button" onclick="changeColor4()">Use querySelector</button>
+    <button class="button" type="button" onclick="changeColor1()">Use DOM traversal</button> <!-- Clicking on the first button fires off changeColor1() -->
+    <button class="button" type="button" onclick="changeColor2()">Use getElementsByTagName</button> <!-- Clicking on the second button fires off changeColor2() -->
+    <button class="button" type="button" onclick="changeColor3()">Use getElementById</button> <!-- Clicking on the third button fires off changeColor3() -->
+    <button class="button" type="button" onclick="changeColor4()">Use querySelector</button> <!-- Clicking on the fourth button fires off changeColor4() -->
 
     <script>
+        // Notice the keyword document:
+        // document references the HTML document that is running the code
+        // it's data type is that of an object && is itself considered a node in the DOM tree, the very first one, aka the root node
+        // all of the following functions use the document as the entry node(point) and can traverse the DOM using node relations
+        // Note: for this demo all the functions are accessing the same node, but showcasing four different ways to do it
         function changeColor1() {
+            // this function changes the color of the 3rd child of the second child of the first child of the document to red by using the .childNodes[$] property
+            // .style.color == <p style="color: red;">
+            // This is one of the worst ways to access a node because if you add or delete any of the elements on the page the nodes will also change, which may break your page.
             document.childNodes[1].childNodes[2].childNodes[3].style.color = 'red';
         }
 
         function changeColor2() {
+            // this function changes the color of the first p element node in the index using the getElementsByTagName method in the document to orange
+            // .getElementsByTagName will look for all elements with a particular tag name that you pass in as the argument
+            // this method will return a list of every element with that tag name, even if there's only one
+            // we can access a particular element using bracket notation with an index number, here we choose the very first p element and style it with the color orange
+            // this method can be good to use if you want to target every element of a particular type in a document
+            // However, if you're trying to target a single element, this would not be the most efficient way, since you would have to know the order of the entire document
+            // and again if you change something, you may break it
             document.getElementsByTagName('p')[0].style.color = 'orange';
         }
 
         function changeColor3() {
+            // this function changes the color of the element with the ID of textToChange using the .getElementById method with the argument of the element's ID(textToChange) to blue
+            // this is much more specific and it targets the element directly
+            // since HTML documents should only use 1 Id throughout a webpage
+            // this would be a one way to target a node specifically, which works well
+            // this is actually the way they used to target specific nodes, so you'll still see code like this in the wild, but the preffered way to target specific nodes nowadays:
             document.getElementById('textToChange').style.color = 'blue';
         }
 
         function changeColor4() {
-            document.querySelector('button').style.color = 'green';
+            // this function changes the color of the element using the .querySelector method with CSS selectors as an argument to green
+            // here we target the CSS selector #textToChange which is the ID of the first <p> element in the document
+            // If you need to target multiple elements with matching selectors use the .querySelectorAll method instead
+            // this method is quite flexible and powerful, because you can use any CSS selector, you can also use more complex ones as well
+            // Note: this will only return the first element it finds that matches the selector
+            // document.querySelector('#textToChange').style.color = 'green';
+            document.querySelectorAll('button')[1].style.background = 'blue';
+            // we can also access different properties in the document using dot notation:
+            // in this example, we'll access the hidden property and give it the value of true, when you click on the button what happens?
+            document.querySelector('p + button').hidden = true;
         }
     </script>
 </body>
