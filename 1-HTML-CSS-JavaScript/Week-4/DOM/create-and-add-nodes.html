@@ -1,3 +1,13 @@
+<!-- createElement() - Allows you to create any new HTML element node -->
+<!-- createTextNode() - Allows you to create a new Text Node. There are more methods to create other kinds of Text nodes, ex: .createComment for comments -->
+<!-- Note: When you create a new DOM node, it isn't automatically added to the DOM tree structure and won't show up on the page
+        it doesn't know where it belongs in the DOM until you explicitly tell it -->
+<!-- insertBefore() - is a node method, meaning you can only use it on an existing node
+        You must first figure out an existing node in the DOM to act as the parent node for the newly created node -->
+<!-- appendChild() - is another node method to add a node to an existing DOM, Again you need to locate an existing node to act as the parent for your newly created node
+        -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,16 +27,26 @@
 
     <script>
         function insertNewElement() {
-            const newEl = document.createElement('hr');
+            const newEl = document.createElement('hr'); // this will create a new <hr> element and save it to a variable name newEl when the button is clicked on the page
+            // syntax: document.createElement("any HTML element")
             const parentNode = document.querySelector('#firstP');
+            //syntax: variable.insertBefore(new node variable, parent node where you'd like to insert it before  )
+            // the last argument can be any child node of the parent node
+            // this example is using the firstChild of the parentNode variable
             parentNode.insertBefore(newEl, parentNode.firstChild);
+            // so everytime the button is clicked the <hr> will always appear BEFORE the firstChild of parentNode which has the ID of #firstP
+            // thus making it the New First Child
         }
 
         function insertNewText() {
-            const newText = document.createTextNode(' This is dynamically added text!');
-            const parentNode = document.getElementById('secondP');
-            parentNode.appendChild(newText);
-        }
+            // syntax: document.createTextNode('your text goes here');
+            const newText = document.createTextNode(' This is dynamically added text! '); // this will create a new Text node and save it inside a variable named newText
+            // this creates a new node from using the getElementById() method which is then saved to the parentNode variable
+            const parentNode = document.getElementById('secondP'); // the ID for for the argument is secondP in this example
+
+            parentNode.appendChild(newText); // this will add a new child with the newText variable AFTER the parentNode Variable
+            // this becomes the the child of parentNode which also becomes the very LAST child node
+        }   // so everytime the button is clicked the new Text node will be displayed AFTER the parenNode Variable
     </script>
 </body>
 </html>
