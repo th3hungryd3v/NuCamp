@@ -1,3 +1,7 @@
+<!-- Cloning a single node  = cloneNode() - without any arguments, but you must have a reference to the node to clone -->
+<!-- Cloning a branch  = cloneNode(true) - with the argument of true, it will clone the entire branch (the node itself and all the other nodes that are children of that node)-->
+<!-- lastElementChild - works just like firstElementChild, will skip text and other types of nodes-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,17 +24,21 @@
     <button type="button" onclick="cloneListItemBranch()">Copy the last listitem and its branch</button>
 
     <script>
-        const listNode = document.querySelector('#myList');
+        const listNode = document.querySelector('#myList'); // save the value of the document.querySelector, in this case, the <ul> element with the ID of myList and store it inside a variable named listNode
+            // save the value of lastElementChild of listNode and store it inside a variable named nodeToCopy
         const nodeToCopy = listNode.lastElementChild;
 
         function cloneListItem() {
-            const copy = nodeToCopy.cloneNode();
+            const copy = nodeToCopy.cloneNode(); // this will clone the nodeToCopy variable and store it in a variable named copy, since there's no argument, it will only clone a single node 
+            // this will append the child of listNode with the variable copy as its argument
             listNode.appendChild(copy);
+            // whenever you click the button a <li> element will be cloned and appended to AFTER the last element child, without the text content.
+
         }
 
-        function cloneListItemBranch() {
-            const copy = nodeToCopy.cloneNode(true);
-            listNode.appendChild(copy);
+        function cloneListItemBranch() { 
+            const copy = nodeToCopy.cloneNode(true); // this will clone the nodeToCopy's whole branch variable and store it in a variable named copy, since the argument is true it will clone the node and everything inside of it
+            listNode.appendChild(copy); // this will append the child of listNode and all it
         }
     </script>
 </body>
