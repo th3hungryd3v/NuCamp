@@ -7,7 +7,12 @@
     <title>Matching Game</title>
 
     <style>
+
+        body {
+            background-color: rgba(0, 161, 161, 0.384);
+        }
         img {
+            box-shadow: 0px 3px 10px rgb(56, 26, 26);
             position: absolute;
         }
         
@@ -34,8 +39,8 @@
     
 
     <script>
-        let numberOfFaces = 5;
-        let numTries = 0;
+        let numberOfFaces = 5; // number of images to show up when the page loads
+        let numTries = 0; // number of tries they guess correctly
         const theLeftSide = document.getElementById('leftSide');
         const theRightSide = document.getElementById('rightSide')
 
@@ -77,14 +82,13 @@
         }
 
         function gameOver() {
-            // let numTries = 0;
             alert("Game Over, Man!\n\nYou guessed correctly " + numTries + " times!" );
             document.body.removeEventListener("click", gameOver);
             theLeftSide.lastChild.removeEventListener("click", nextLevel);
 
+
         }
-        const res = document.createElement('button');
-        res.appendChild(res)
+       
     </script>
 </body>
 
