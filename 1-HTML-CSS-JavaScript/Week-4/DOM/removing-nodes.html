@@ -1,6 +1,10 @@
-<!-- remove() -->
-<!-- removeChild() -->
-<!-- firstElementChild -->
+<!-- remove() - Allows you to remove an entire element node and every child of that node, You must have a reference to the exact node to remove -->
+<!-- removeChild() - Allows you to remove children nodes of a parent node, You must have a reference to a parent node -->
+<!-- Note: using removeChild() with a while loop, you can delete all the children of a parent node while leaving the parent intact -->
+
+<!-- firstElementChild - similar to firstChild
+        syntax: parentNode.firstElementChild
+        will return the first element child of a node, skipping any text/other kind of nodes-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,19 +31,33 @@
     <p>Reload the page to reset the DOM and bring the list back.</p> 
 
     <script>
-        const listNode = document.querySelector('#myList');
+        const listNode = document.querySelector('#myList'); // this creates a node that selects an element with an ID of #myList and stores it in a variable called listNode
 
         function removeListFirstChild() {
-            listNode.removeChild(listNode.firstChild);
+            // this calls the listNode variable and is attached to the removeChild() method and will remove the node inside the argument
+            // in this example it's the firstChild of the listNode variable, which is the first child of <ul id="myList">
+            // one at a time, every time the button is clicked, until there are no more children left
+            // in this example it will be the firsChild of #myList (Chicago Bulls)
+            // Notice how you have to click the button twice, that's because the whitespace and the new lines created Whitespace Text Nodes 
+        //listNode.removeChild(listNode.firstChild);
+            // if you use the firstElementChild instead
+            listNode.removeChild(listNode.firstElementChild); // now it only takes one click to remove a child
+            // because the firstElementChild skips every text/other kind of node and will remove the first child it comes across that 
+            // matches the argument, in this case, it's the <ul> element and the first child that isn't a text node is the first <li> (chicago bulls)
         }
 
         function removeAllListChildren() {
             while (listNode.firstChild) {
-                listNode.removeChild(listNode.firstChild);
+            // this calls the listNode variable and will remove all the first children in the listNode variable while there is children in the list
+            // this will remove all the children in the list, basically
+            // the list element node is still there, but without anymore child nodes 
+                listNode.removeChild(listNode.firstChild); // 
             }
         }
         
         function removeList() {
+            // this function will remove the whole listNode in one fell swoop, which is the actual unordered list and everything inside of it
+            // in this example listNodes value is the <ul id="myList"> 
             listNode.remove();
         }
     </script>
