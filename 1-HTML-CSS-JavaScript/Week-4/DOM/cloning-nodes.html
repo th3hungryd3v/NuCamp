@@ -38,7 +38,8 @@
 
         function cloneListItemBranch() { 
             const copy = nodeToCopy.cloneNode(true); // this will clone the nodeToCopy's whole branch variable and store it in a variable named copy, since the argument is true it will clone the node and everything inside of it
-            listNode.appendChild(copy); // this will append the child of listNode and all it
+            listNode.appendChild(copy); // this will append the child of listNode that was cloned and stored in the variable copy and add it to DOM
+            // whenever you click the button a <li> element and all the children inside will be cloned and appended AFTER the last element child
         }
     </script>
 </body>
