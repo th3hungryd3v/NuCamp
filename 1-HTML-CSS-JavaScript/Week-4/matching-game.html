@@ -7,12 +7,21 @@
     <title>Matching Game</title>
 
     <style>
-
         body {
-            background-color: rgba(0, 161, 161, 0.384);
+            background-color: rgba(2, 141, 141, 0.384);
         }
+        
+        h1 {
+            font-size: 6rem;
+            text-align: center;
+        }
+        p {
+            font-size: 3em;
+            text-align: center;
+        }
+
         img {
-            box-shadow: 0px 3px 10px rgb(56, 26, 26);
+            box-shadow: 0px 3px 10px rgb(116, 79, 79);
             position: absolute;
         }
         
@@ -23,8 +32,8 @@
         }
         
         #rightSide {
-            left: 500px;
-            border-left: 1px solid;
+            left: 600px;
+            border-left: 3px solid;
         }
     </style>
 
@@ -34,17 +43,17 @@
     <h1>Matching Game</h1>
     <p>Click on the extra smiling face on the left</p>
 
-    <div id="leftSide"></div>
-    <div id="rightSide"></div>
-    
+        <div id="leftSide"></div>
+        <div id="rightSide"></div>
+
 
     <script>
         let numberOfFaces = 5; // number of images to show up when the page loads
         let numTries = 0; // number of tries they guess correctly
-        const theLeftSide = document.getElementById('leftSide');
-        const theRightSide = document.getElementById('rightSide')
+        const theLeftSide = document.getElementById('leftSide'); // this will use any element within the document with the ID of leftSide as the argument inside the getElementById() method and store that in a variable named theLeftSide as our entry point for this node  
+        const theRightSide = document.querySelector('#rightSide') // this will use any element within the document with the id="rightSide" as the argument inside the querySelector() method and store that in a variable named theRightSide as our entry point for this node
 
-        function generateFaces() {
+        function generateFaces() { // this function will load as the document is loading the body
             for (let i = 0; i < numberOfFaces; i++) {
                 let face = document.createElement('img');
                 face.src = "../Week-1/images/smile.png";
@@ -82,16 +91,13 @@
         }
 
         function gameOver() {
-            alert("Game Over, Man!\n\nYou guessed correctly " + numTries + " times!" );
+            alert("Game Over, Man!\n\nYou guessed correctly " + numTries + " times!");
             document.body.removeEventListener("click", gameOver);
             theLeftSide.lastChild.removeEventListener("click", nextLevel);
 
 
         }
-       
     </script>
 </body>
 
 </html>
-
-
