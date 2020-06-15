@@ -1,10 +1,13 @@
-<!DOCTYPE html> <!-- Doctype Decleration -->
-<html lang="en"> <!-- Opening HTML element with the language attribute equal to "en" for "english"-->
+<!DOCTYPE html>
+<!-- Doctype Decleration -->
+<html lang="en">
+<!-- Opening HTML element with the language attribute equal to "en" for "english"-->
 
-<head> <!--Opening header tag - All the meta information as well as stylesheets go in here-->
-    
+<head>
+    <!--Opening header tag - All the meta information as well as stylesheets go in here-->
+
     <!-- Required meta tags always come first -->
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <!-- Helps in Responsive Web Design by initializing the webpage to be optimized for multiple device sizes
     It gives browser instructions on how to control the pages dimensions and scaling
     It sets the page's width to be equal to the device's width
@@ -13,52 +16,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"> <!--  -->
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!--  -->
 
     <!-- Additional CSS must be placed AFTER Bootstrap CSS to be sure your personal styles will override Bootstrap's correctly-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"> <!-- A Link to the font to be used from Google Fonts-->
-    <link rel="stylesheet" href="css/styles.css"> <!--A link to our own personal stylesheet to be used to override Bootstrap's CSS styles-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
+    <!-- A Link to the font to be used from Google Fonts-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!--A link to our own personal stylesheet to be used to override Bootstrap's CSS styles-->
     <!-- Title - What you put in here shows up in the browser's tab -->
     <title>NuCamp: A Better Way To Camp</title>
 </head>
 
 <body>
-    <header>
-        <div>
-            <h1>NuCamp</h1>
-            <h2>a better way to camp</h2>
+    <!--A lightweight, flexible component for showcasing hero unit style content.-->
+    <!-- .jumbotron-fluid is used because the rounded corners are visible since we changed the plain white background to a different color.
+    Now the .jumbotron takes up the full width and the rounded corners are no longer visible-->
+    <header class="jumbotron jumbotron-fluid">
+        <!--A basic layout element in Bootstrap- required to use default grid system- used to contain, pad, and (sometimes) center the content within them-->
+        <div class="container">
+            <!--row = Wrappers for columns-->
+            <div class="row">
+                <!--Columns- content must be placed within columns and only columns can be immediate children of rows-->
+                <!-- No width is specified, so it will automatically layout as equal width columns = 12 colums xs viewports and up || col-xs-12 || full width of the row -->
+                <div class="col">
+                    <h1>NuCamp</h1>
+                    <h2>a better way to camp</h2>
+                </div>
+            </div>
         </div>
     </header>
-    <div>
-        <h2>Discover & Review</h2>
-        <h3>Our Campsites</h3>
-        <p>Explore our growing database of curated campsites and leave your own reviews!</p>
+    <div class="container">
+        <!-- align-items-center = align all items inside this row to the center || align items on the cross axis to the center inside flexbox containers-->
+        <div class="row row-content align-items-center">
+            <!--On sm viewports this h2 will take up 4 columns out of 12, but from md and up it'll take 3 columns -->
+            <!--Note: on xs this will take up all 12 columns for this row which means: -->
+            <!-- Bootstrap will automagically stack this on top of the column below on xs viewports-->
+            <!-- order-sm-last = take this flex item and make it the last one on the row on sm viewports and up.
+             this flex item is now shifted onto the right side of the column-->
+            <div class="col-sm-4 col-md-3 order-sm-last">
+                <h2>Discover & Review</h2>
+            </div>
+            <!-- This column will get bumped down on xs viewports since the column above will take up all 12 columns -->
+            <div class="col">
+                <h3>Our Campsites</h3>
+                <p>Explore our growing database of curated campsites and leave your own reviews!</p>
+            </div>
+        </div>
     </div>
-    <div>
-        <h2>Our Community Partners</h2>
-        <h3>Bootstrap Outfitters</h3>
-        <p>Bootstrap Outfitters supplies you with gear you need at prices you can't beat.</p>
+    <div class="container">
+        <div class="row row-content align-items-center">
+            <div class="col-sm-4 col-md-3">
+                <h2>Featured Campsites</h2>
+            </div>
+            <div class="col">
+                <h3>React Lake Campground</h3>
+                <p>Nestled in the foothills of the Chrome Mountains. This campground on the shores of the pristine React Lake is a favorite for fly fishers.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row row-content align-items-center">
+            <div class="col-sm-4 col-md-3 order-sm-last">
+                <h2>Our Community Partners</h2>
+            </div>
+            <div class="col">
+                <h3>Bootstrap Outfitters</h3>
+                <p>Bootstrap Outfitters supplies you with gear you need at prices you can't beat.</p>
+            </div>
+        </div>
     </div>
     <footer>
-        <div>
-            <h5>Links</h5>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Sites</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-        <div>
-            <h5>Social</h5>
-            <a href="http://instagram.com/">Instagram</a>
-            <a href="http://facebook.com/">Facebook</a>
-            <a href="http://twitter.com">Twitter</a>
-            <a href="http://youtube.com/">YouTube</a>
-        </div>
-        <div>
-            Tel: 1-206-555-1234 <br> 
-            Email: campsites@nucamp.com
+        <div class="container">
+            <div class="row">
+                <!-- On xs viewports this column will take up 4 columns, but from sm and up it'll take up 2 columns -->
+                <!-- offset-1 = pushes column to the right by 1 column -->
+                <div class="col-4 col-sm-2 offset-1">
+                    <h5>Links</h5>
+                    <!-- Adding this class removes the default styling for all the <li> items inside the <ul>
+                        in this example: the bullet points  -->
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Sites</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- On xs viewports this will take half of the columns in this row, but from sm and up it'll take up 5 columns -->
+                <div class="col-6 col-sm-5">
+                    <h5>Social</h5>
+                    <a href="http://instagram.com/">Instagram</a>
+                    <a href="http://facebook.com/">Facebook</a>
+                    <a href="http://twitter.com">Twitter</a>
+                    <a href="http://youtube.com/">YouTube</a>
+                </div>
+                <!-- This takes up all 12 columns on xs viewports, which will bump this down, but on sm and up, take up 4 columns-->
+                <div class="col-sm-4">
+                    Tel: 1-206-555-1234 <br> Email: campsites@nucamp.com
+                </div>
+            </div>
         </div>
     </footer>
     <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins. -->

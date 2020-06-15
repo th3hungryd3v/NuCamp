@@ -1,0 +1,38 @@
+/* Use these fonts for all the text in the Document */
+body {
+    font-family: "Montserrat", "Open Sans", sans-serif;
+}
+/* Use this Font for each of these headers exclusively */
+h1,h2,h3 {
+    font-family: "Lobster", cursive;
+}
+/* All h2's should use this color for the text */
+h2 {
+    color: #3046C5;
+}
+/* Any header parent with h2 children should color their text using this color */
+header h2 {
+    color: #CEC8FF;
+}
+/* Use this gradient as a background image for this element and all the children inside
+    Apply padding to the top and bottom of all the children inside the footer element */
+footer {
+    background-image: linear-gradient(#CEC8FF, white);
+    padding: 20px 0;
+}
+/* Apply padding to all sides of the content inside the jumbotron
+    Apply linear-gradient as a background image with these colors starting from the left side
+    Color any text in the jumbotron to white*/
+.jumbotron {
+    padding: 30px;
+    background-image: linear-gradient(to right, #5637DD, #3046C5, #60106B);
+    color: white;
+}
+/* Add additional padding to the tops and bottoms wherever this class is applied to
+    Add a ridged border to the bottom that's 1px wide
+    Prevent the height of this class from becoming smaller than 200px */
+.row-content {
+    padding: 50px 0;
+    border-bottom: 1px ridge;
+    min-height: 200px;
+}
