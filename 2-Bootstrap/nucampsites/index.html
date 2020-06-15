@@ -1,14 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Doctype Decleration -->
+<html lang="en"> <!-- Opening HTML element with the language attribute equal to "en" for "english"-->
 
-<head>
+<head> <!--Opening header tag - All the meta information as well as stylesheets go in here-->
+    
     <!-- Required meta tags always come first -->
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
+    <!-- Helps in Responsive Web Design by initializing the webpage to be optimized for multiple device sizes
+    It gives browser instructions on how to control the pages dimensions and scaling
+    It sets the page's width to be equal to the device's width
+    It sets the current scale to 1, which is the initial zoom level of the webpage
+    This is the typical way to set up your viewport meta tag-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"> <!--  -->
 
+    <!-- Additional CSS must be placed AFTER Bootstrap CSS to be sure your personal styles will override Bootstrap's correctly-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"> <!-- A Link to the font to be used from Google Fonts-->
+    <link rel="stylesheet" href="css/styles.css"> <!--A link to our own personal stylesheet to be used to override Bootstrap's CSS styles-->
+    <!-- Title - What you put in here shows up in the browser's tab -->
     <title>NuCamp: A Better Way To Camp</title>
 </head>
 
