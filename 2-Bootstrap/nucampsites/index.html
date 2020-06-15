@@ -47,7 +47,7 @@
         </div>
     </header>
     <div class="container">
-        <!-- align-items-center = align all items inside this row to the center || align items on the cross axis to the center inside flexbox containers-->
+        <!-- align-items-center = align all items inside this row to the center || align items on the cross axis (vertical) to the center inside flexbox containers-->
         <div class="row row-content align-items-center">
             <!--On sm viewports this h2 will take up 4 columns out of 12, but from md and up it'll take 3 columns -->
             <!--Note: on xs this will take up all 12 columns for this row which means: -->
@@ -55,6 +55,7 @@
             <!-- order-sm-last = take this flex item and make it the last one on the row on sm viewports and up.
              this flex item is now shifted onto the right side of the column-->
             <div class="col-sm-4 col-md-3 order-sm-last">
+                <!-- This class will align all the text inside h2 to the right on viewports sm and above -->
                 <h2>Discover & Review</h2>
             </div>
             <!-- This column will get bumped down on xs viewports since the column above will take up all 12 columns -->
@@ -79,7 +80,7 @@
     <div class="container">
         <div class="row row-content align-items-center">
             <div class="col-sm-4 col-md-3 order-sm-last">
-                <h2>Our Community Partners</h2>
+                <h2 class="text-sm-right">Our Community Partners</h2>
             </div>
             <div class="col">
                 <h3>Bootstrap Outfitters</h3>
@@ -104,7 +105,8 @@
                     </ul>
                 </div>
                 <!-- On xs viewports this will take half of the columns in this row, but from sm and up it'll take up 5 columns -->
-                <div class="col-6 col-sm-5">
+                <!-- text-center = moves all to the center and applies to all viewport sizes.-->
+                <div class="col-6 col-sm-5 text-center">
                     <h5>Social</h5>
                     <a href="http://instagram.com/">Instagram</a>
                     <a href="http://facebook.com/">Facebook</a>
@@ -112,7 +114,7 @@
                     <a href="http://youtube.com/">YouTube</a>
                 </div>
                 <!-- This takes up all 12 columns on xs viewports, which will bump this down, but on sm and up, take up 4 columns-->
-                <div class="col-sm-4">
+                <div class="col-sm-4 text-center">
                     Tel: 1-206-555-1234 <br> Email: campsites@nucamp.com
                 </div>
             </div>
