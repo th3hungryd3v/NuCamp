@@ -29,120 +29,119 @@
 </head>
 
 <body>
-    <!--A lightweight, flexible component for showcasing hero unit style content.-->
-    <!-- .jumbotron-fluid is used because the rounded corners are visible since we changed the plain white background to a different color.
+<!--A lightweight, flexible component for showcasing hero unit style content.-->
+<!-- .jumbotron-fluid is used because the rounded corners are visible since we changed the plain white background to a different color.
     Now the .jumbotron takes up the full width and the rounded corners are no longer visible-->
-    <header class="jumbotron jumbotron-fluid">
-        <!--A basic layout element in Bootstrap- required to use default grid system- used to contain, pad, and (sometimes) center the content within them-->
-        <div class="container">
-            <!--row = Wrappers for columns-->
-            <div class="row">
-                <!--Columns- content must be placed within columns and only columns can be immediate children of rows-->
-                <!-- No width is specified, so it will automatically layout as equal width columns = 12 colums xs viewports and up || col-xs-12 || full width of the row -->
-                <div class="col">
-                    <h1>NuCamp</h1>
-                    <h2>a better way to camp</h2>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- navbar = base class for navbar component - most components have a base class that you have to apply before you can use any of the other classes for that component-->
-    <!-- navbar-expand-sm = requires wrapping from .navbar for responsive collapsing and color scheme classes -  -->
-    <!-- navbar-dark = indicates we're using a dark navbar style, which will cause the navbar items to be lighter for better contrast  -->
-    <!-- sticky-top = allows the navbar to stay stuck at the top of the page after you scroll past it-->
-    <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
-        <!-- Wrapped the innards of our navbar to change the padding of our links when the viewport is md and above-->
-        <div class="container">
-            <!-- This button will become our navbar-toggler when the viewport is sm and below -->
-            <!-- navbar-toggler = component for the collapse plugin - collapse =  hides the content in our following span class - #nucampNavbar = the ID of the content to hide in our span class (icon)-->
-            <!-- using the .ml-auto to move the toggler button to the right, the toggler always defaults to the left -->
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#nucampNavbar">
-        <!-- This is where our nav-links will hide behind when the viewport is sm and below -->
-                <span class="navbar-toggler-icon"> </span>
-            </button>
-            <!-- Since we are using data attributes, we add the .collapse(our collapsible element), .navbar-collapse, and #nucampNavbar(CSS selector to apply the collapse to) because these are the nav-items and nav-links we are passing control to, in our <button> element -->
-            <div class="collapse navbar-collapse" id="nucampNavbar">
-                <!-- navbar-nav = together, this will cause the navbar to expand horizontally for viewports sm and above -->
-                <ul class="navbar-nav">
-                    <!-- nav-item = helps with the appearance - active = highlights the appearance of that particular nav item -->
-                    <!-- nav-link = specifies a nav-item's anchor tag and applies padding  -->
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="#">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Sites</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-
+<header class="jumbotron jumbotron-fluid">
+    <!--A basic layout element in Bootstrap- required to use default grid system- used to contain, pad, and (sometimes) center the content within them-->
     <div class="container">
+        <!--row = Wrappers for columns-->
         <div class="row">
+            <!--Columns- content must be placed within columns and only columns can be immediate children of rows-->
+            <!-- No width is specified, so it will automatically layout as equal width columns = 12 colums xs viewports and up || col-xs-12 || full width of the row -->
             <div class="col">
-                <!-- Our location-based breadcrumb -->
-                <ol class="breadcrumb">
-                    <!-- A breadcrumb item with a link to where we came from -->
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <!-- A breadcrumb item without any link set because we are currently in this location, which is why it's also using the active class -->
-                    <li class="breadcrumb-item active">About Us</li>
-
-                </ol>
-                <h2>About Us</h2>
-                <hr>
-            </div>
-        </div>
-        <div class="row row-content">
-            <div class="col col-sm-6">
-                <h3>Our Mission</h3>
-                <p>We present a curated database of the best campsites in the vast woods and backcountry of the World Wide Web Wilderness. We increase access to adventure for the public while promoting safe and respectful use of resources. The expert wilderness
-                    trekkers on our staff personally verify each campsite to make sure that they are up to our standards. We also present a platform for campers to share reviews on campsites they have visited with each other.</p>
-            </div>
-        </div>
-        <div class="row row-content">
-            <div class="col">
-                <h3>Community Partners</h3>
-                <h4>Bootstrap Outfitters <small>Outdoor Gear Specialists</small></h4>
-                <p class="d-none d-sm-block">Bootstrap Outfitters supplies you with the gear you need at prices you can't beat.</p>
-                <h4>Git Out Expeditions <small>Group Adventure Expiditions</small></h4>
-                <p class="d-none d-sm-block">Join Git Out Expeditions to explore new horizons with a group of other adventurers!</p>
-                <h4>Mongo Fly Shop <small>Your Neighborhood Fly Fishing Shop</small></h4>
-                <p class="d-none d-sm-block">Need a new fishing pole, a tacklebox, or flies of all kinds? Stop by Mongo Fly Shop</p>
-                <h4>Node Outdoor Apparel <small>Outdoor Clothes & Shoes</small></h4>
-                <p class="d-none d-sm-block">From polar fleeces to swimsuits, hiking boots to waders, a visit to Node will be sure to gey you covered.</p>
+                <h1>NuCamp</h1>
+                <h2>a better way to camp</h2>
             </div>
         </div>
     </div>
+</header>
+<!-- navbar = base class for navbar component - most components have a base class that you have to apply before you can use any of the other classes for that component-->
+<!-- navbar-expand-sm = requires wrapping from .navbar for responsive collapsing and color scheme classes -  -->
+<!-- navbar-dark = indicates we're using a dark navbar style, which will cause the navbar items to be lighter for better contrast  -->
+<!-- sticky-top = allows the navbar to stay stuck at the top of the page after you scroll past it-->
+<nav class="navbar navbar-expand-sm navbar-dark sticky-top">
+    <!-- Wrapped the innards of our navbar to change the padding of our links when the viewport is md and above-->
+    <div class="container">
+        <!-- This button will become our navbar-toggler when the viewport is sm and below -->
+        <!-- navbar-toggler = component for the collapse plugin - collapse =  hides the content in our following span class - #nucampNavbar = the ID of the content to hide in our span class (icon)-->
+        <!-- using the .ml-auto to move the toggler button to the right, the toggler always defaults to the left -->
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#nucampNavbar">
+        <!-- This is where our nav-links will hide behind when the viewport is sm and below -->
+                <span class="navbar-toggler-icon"> </span>
+            </button>
+        <!-- Since we are using data attributes, we add the .collapse(our collapsible element), .navbar-collapse, and #nucampNavbar(CSS selector to apply the collapse to) because these are the nav-items and nav-links we are passing control to, in our <button> element -->
+        <div class="collapse navbar-collapse" id="nucampNavbar">
+            <!-- navbar-nav = together, this will cause the navbar to expand horizontally for viewports sm and above -->
+            <ul class="navbar-nav">
+                <!-- nav-item = helps with the appearance - active = highlights the appearance of that particular nav item -->
+                <!-- nav-link = specifies a nav-item's anchor tag and applies padding  -->
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item active"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Sites</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-4 col-sm-2 offset-1">
-                    <h5>Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Sites</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-sm-5 text-center">
-                    <h5>Social</h5>
-                    <a href="http://instagram.com">Instagram</a>
-                    <a href="http://facebook.com">Facebook</a>
-                    <a href="http://twitter.com">Twitter</a>
-                    <a href="http://youtube.com">YouTube</a>
-                </div>
-                <div class="col-sm-4 text-center">
-                    Tel: 1-206-555-1234 <br> Email: campsites@nucamp.co
-                </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <!-- Our location-based breadcrumb -->
+            <ol class="breadcrumb">
+                <!-- A breadcrumb item with a link to where we came from -->
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <!-- A breadcrumb item without any link set because we are currently in this location, which is why it's also using the active class -->
+                <li class="breadcrumb-item active">About Us</li>
+            </ol>
+            <h2>About Us</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row row-content">
+        <div class="col col-sm-6">
+            <h3>Our Mission</h3>
+            <p>We present a curated database of the best campsites in the vast woods and backcountry of the World Wide Web Wilderness. We increase access to adventure for the public while promoting safe and respectful use of resources. The expert wilderness
+                trekkers on our staff personally verify each campsite to make sure that they are up to our standards. We also present a platform for campers to share reviews on campsites they have visited with each other.</p>
+        </div>
+    </div>
+    <div class="row row-content">
+        <div class="col">
+            <h3>Community Partners</h3>
+            <h4>Bootstrap Outfitters <small>Outdoor Gear Specialists</small></h4>
+            <p class="d-none d-sm-block">Bootstrap Outfitters supplies you with the gear you need at prices you can't beat.</p>
+            <h4>Git Out Expeditions <small>Group Adventure Expiditions</small></h4>
+            <p class="d-none d-sm-block">Join Git Out Expeditions to explore new horizons with a group of other adventurers!</p>
+            <h4>Mongo Fly Shop <small>Your Neighborhood Fly Fishing Shop</small></h4>
+            <p class="d-none d-sm-block">Need a new fishing pole, a tacklebox, or flies of all kinds? Stop by Mongo Fly Shop</p>
+            <h4>Node Outdoor Apparel <small>Outdoor Clothes & Shoes</small></h4>
+            <p class="d-none d-sm-block">From polar fleeces to swimsuits, hiking boots to waders, a visit to Node will be sure to gey you covered.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-4 col-sm-2 offset-1">
+                <h5>Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Sites</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-sm-5 text-center">
+                <h5>Social</h5>
+                <a href="http://instagram.com">Instagram</a>
+                <a href="http://facebook.com">Facebook</a>
+                <a href="http://twitter.com">Twitter</a>
+                <a href="http://youtube.com">YouTube</a>
+            </div>
+            <div class="col-sm-4 text-center">
+                Tel: 1-206-555-1234 <br> Email: campsites@nucamp.co
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins. -->
-    <script src="../../node_modules/jquery/dist/jquery.slim.min.js"></script>
-    <script src="../../node_modules/popper.js/dist/popper.min.js"></script>
-    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins. -->
+<script src="../../node_modules/jquery/dist/jquery.slim.min.js"></script>
+<script src="../../node_modules/popper.js/dist/popper.min.js"></script>
+<script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
