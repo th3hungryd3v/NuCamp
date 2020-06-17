@@ -22,8 +22,11 @@ footer {
 }
 /* Apply padding to all sides of the content inside the jumbotron
     Apply linear-gradient as a background image with these colors starting from the left side
-    Color any text in the jumbotron to white*/
+    Color any text in the jumbotron to white
+    Apply 0 margin to remove the space between the <header> and the .navbar*/
+
 .jumbotron {
+    margin: 0;
     padding: 30px;
     background-image: linear-gradient(to right, #5637DD, #3046C5, #60106B);
     color: white;
@@ -35,4 +38,8 @@ footer {
     padding: 50px 0;
     border-bottom: 1px ridge;
     min-height: 200px;
+}
+
+.navbar {
+    background-color: #901CAD;
 }

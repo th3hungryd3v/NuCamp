@@ -46,6 +46,35 @@
             </div>
         </div>
     </header>
+    <!-- navbar = base class for navbar component - most components have a base class that you have to apply before you can use any of the other classes for that component-->
+    <!-- navbar-expand-sm = requires wrapping from .navbar for responsive collapsing and color scheme classes -  -->
+    <!-- navbar-dark = indicates we're using a dark navbar style, which will cause the navbar items to be lighter for better contrast  -->
+    <!-- sticky-top = allows the navbar to stay stuck at the top of the page after you scroll past it-->
+    <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
+        <!-- Wrapped the innards of our navbar to change the padding of our links when the viewport is md and above-->
+        <div class="container">
+            <!-- This button will become our navbar-toggler when the viewport is sm and below -->
+            <!-- navbar-toggler = component for the collapse plugin - collapse =  hides the content in our following span class - #nucampNavbar = the ID of the content to hide in our span class (icon)-->
+            <!-- using the .ml-auto to move the toggler button to the right, the toggler always defaults to the left -->
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#nucampNavbar">
+        <!-- This is where our nav-links will hide behind when the viewport is sm and below -->
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Since we are using data attributes, we add the .collapse(our collapsible element), .navbar-collapse, and #nucampNavbar(CSS selector to apply the collapse to) because these are the nav-items and nav-links we are passing control to, in our <button> element -->
+            <div class="collapse navbar-collapse" id="nucampNavbar">
+                <!-- navbar-nav = together, this will cause the navbar to expand horizontally for viewports sm and above -->
+                <ul class="navbar-nav">
+                    <!-- nav-item = helps with the appearance - active = highlights the appearance of that particular nav item -->
+                    <!-- nav-link = specifies a nav-item's anchor tag and applies padding  -->
+                    <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Sites</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <!-- align-items-center = align all items inside this row to the center || align items on the cross axis (vertical) to the center inside flexbox containers-->
         <div class="row row-content align-items-center">
