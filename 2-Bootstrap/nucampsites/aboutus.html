@@ -4,11 +4,22 @@
     <!-- Required meta tags always come first -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!--  -->
+
+    <!-- Additional CSS must be placed AFTER Bootstrap CSS to be sure your personal styles will override Bootstrap's correctly-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
+    <!-- A Link to the font to be used from Google Fonts-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!--A link to our own personal stylesheet to be used to override Bootstrap's CSS styles-->
+
     <title>NuCamp: A Better Way To Camp</title>
 </head>
 <body>
 
-    <header>
+    <header class="jumbotron jumbotron-fluid">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -20,20 +31,20 @@
     </header>
 
     <div class="container">
-        <div class="row">
-            <div class="col">
+        <div class="row row-content align-items-center">
+            <div class="col-12">
                 <h2>About Us</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col-sm-6">
                 <h3>Our Mission</h3>
                 <p>We present a curated database of the best campsites in the vast woods and backcountry of the World Wide Web Wilderness. We increase access to adventure for the public while promoting safe and respectful use of resources. The expert wilderness trekkers on our staff personally verify each campsite to make sure that they are up to our standards. We also present a platform for campers to share reviews on campsites they have visited with each other.</p>
             </div>
         </div>
-        <div class="row">
+        <div class="row row-content align-items-center">
+            <h3>Community Partners</h3>
             <div class="col">
-                <h3>Community Partners</h3>
                 <h4>Bootstrap Outfitters <small>Outdoor Gear Specialists</small></h4>
                 <p>Bootstrap Outfitters supplies you with the gear you need at prices you can't beat.</p>
                 <h4>Git Out Expeditions <small>Group Adventure Expiditions</small></h4>
@@ -57,7 +68,6 @@
                             <li><a href="#">About</a></li>
                             <li><a href="#">Sites</a></li>
                             <li><a href="#">Contact</a></li>
-                            <li></li>
                         </ul>
                     </div>
                     <div class="col">
