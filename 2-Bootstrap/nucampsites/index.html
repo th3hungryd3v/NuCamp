@@ -16,20 +16,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap CSS -->
+
+
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
 
+    <!-- Additional CSS must be placed AFTER Bootstrap CSS to be sure your personal styles will override Bootstrap's correctly-->
 
     <!-- Stylesheet for font-awesome icons -->
     <link rel="stylesheet" href="../../node_modules/font-awesome/css/font-awesome.min.css">
-    <!-- Additional CSS must be placed AFTER Bootstrap CSS to be sure your personal styles will override Bootstrap's correctly-->
-    
     <!-- Bootstrap-Social modules for the buttons -->
+    <!-- Designed to work specifically with fa icons and Bootstrap buttons together-->
     <link rel="stylesheet" href="../../node_modules/bootstrap-social/bootstrap-social.css">
-    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
     <!-- A Link to the font to be used from Google Fonts-->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
     <!--A link to our own personal stylesheet to be used to override Bootstrap's CSS styles-->
+    <link rel="stylesheet" href="css/styles.css">
     <!-- Title - What you put in here shows up in the browser's tab -->
     <title>NuCamp: A Better Way To Camp</title>
 </head>
@@ -128,6 +129,7 @@
         </div>
     </div>
     <footer>
+        <!-- LINKS -->
         <div class="container">
             <div class="row">
                 <!-- On xs viewports this column will take up 4 columns, but from sm and up it'll take up 2 columns -->
@@ -143,21 +145,28 @@
                         <li><a href="contactus.html">Contact</a></li>
                     </ul>
                 </div>
+                <!-- SOCIAL -->
                 <!-- On xs viewports this will take half of the columns in this row, but from sm and up it'll take up 5 columns -->
                 <!-- text-center = moves all to the center and applies to all viewport sizes.-->
                 <div class="col-6 col-sm-5 text-center">
                     <h5>Social</h5>
-                <!-- Here we replaced the text links with font-awesome social icons -->
-                <!-- The .btn-social-icon is now being used for the appearance of the social links -->
+
+                    <!-- Here we replaced the text links with font-awesome social icons -->
+                    <!-- The .btn-social-icon is now being used for the appearance of the social links -->
+                    <!-- Base Class | social-icon-toolkit | social site -->
                     <a class="btn btn-social-icon btn-instagram" href="http://instagram.com/"><i class="fa fa-instagram"></i></a>
                     <a class="btn btn-social-icon btn-facebook" href="http://facebook.com/"><i class="fa fa-facebook"></i></a>
                     <a class="btn btn-social-icon btn-twitter" href="http://twitter.com"><i class="fa fa-twitter"></i></a>
                     <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
                 </div>
+                <!-- CONTACT -->
                 <!-- This takes up all 12 columns on xs viewports, which will bump this down, but on sm and up, take up 4 columns-->
                 <div class="col-sm-4 text-center">
                     <!-- Font-Awesome Icons for phone number and email address -->
-                    <a role="button" class="btn btn-link" href="tel:+12065551234"><i class="fa fa-phone"></i> Tel: 1-206-555-1234</a> <br> 
+                    <!-- role="button" is useful for screen-readers
+                     The classes utilizes Bootstrap's base class followed by the button style to be usen on the fa icon-->
+                     <!-- NOTE: The tel:/mailto: protocols being used for the link href -->
+                    <a role="button" class="btn btn-link" href="tel:+12065551234"><i class="fa fa-phone"></i> Tel: 1-206-555-1234</a> <br>
                     <a role="button" class="btn btn-link" href="mailto:campsite@nucamp.co"><i class="fa fa-envelope-o"></i> Email: campsites@nucamp.com</a>
                 </div>
             </div>

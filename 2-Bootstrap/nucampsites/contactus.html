@@ -1,22 +1,36 @@
-
 <!DOCTYPE html>
+<!-- Doctype Decleration -->
 <html lang="en">
+<!-- Opening HTML element with the language attribute equal to "en" for "english"-->
 
 <head>
+    <!--Opening header tag - All the meta information as well as stylesheets go in here-->
+
     <!-- Required meta tags always come first -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <!-- Helps in Responsive Web Design by initializing the webpage to be optimized for multiple device sizes
+    It gives browser instructions on how to control the pages dimensions and scaling
+    It sets the page's width to be equal to the device's width
+    It sets the current scale to 1, which is the initial zoom level of the webpage
+    This is the typical way to set up your viewport meta tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
 
-    <!-- Additional CSS must be placed after Bootstrap CSS -->
-    <!-- Bootstrap-Social components for the buttons' appearance -->
+
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- Additional CSS must be placed AFTER Bootstrap CSS to be sure your personal styles will override Bootstrap's correctly-->
+
+    <!-- Stylesheet for font-awesome icons -->
+    <link rel="stylesheet" href="../../node_modules/font-awesome/css/font-awesome.min.css">
+    <!-- Bootstrap-Social modules for the buttons -->
     <link rel="stylesheet" href="../../node_modules/bootstrap-social/bootstrap-social.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
-    <link rel="stylesheet" href="../../node_modules/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/styles.css" />
-
+    <!-- A Link to the font to be used from Google Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
+    <!--A link to our own personal stylesheet to be used to override Bootstrap's CSS styles-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Title - What you put in here shows up in the browser's tab -->
     <title>NuCamp: A Better Way To Camp</title>
 </head>
 
@@ -43,7 +57,7 @@
                     <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa fa-home fa-lg"></i> Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="aboutus.html"><i class="fa fa-info fa-lg"></i> About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-list fa-lg"></i> Sites</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="contactus.html"><i class="fa fa-address-card fa-lg"></i> Contact</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#"><i class="fa fa-address-card fa-lg"></i> Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -51,6 +65,7 @@
 
     <div class="container">
         <div class="row">
+            <!-- BREADCRUMB -->
             <div class="col">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -62,6 +77,7 @@
         </div>
 
         <div class="row row-content align-items-center">
+            <!-- OUR ADDRESS -->
             <div class="col-sm-4">
                 <h5>Our Address</h5>
                 <address>
@@ -71,26 +87,49 @@
                 </address>
             </div>
             <div class="col">
-				<a role="button" class="btn btn-link" href="tel:+12065551234"><i class="fa fa-phone"></i> 1-206-555-1234</a><br>
-            	<a role="button" class="btn btn-link" href="mailto:campsites@nucamp.co"><i class="fa fa-envelope-o"></i> campsites@nucamp.co</a>
+                <!-- role="button" is useful for screen-readers
+                     The classes utilizes Bootstrap's base class followed by the button style to be usen on the fa icon-->
+                <a role="button" class="btn btn-link" href="tel:+12065551234"><i class="fa fa-phone"></i> 1-206-555-1234</a><br>
+                <a role="button" class="btn btn-link" href="mailto:campsites@nucamp.co"><i class="fa fa-envelope-o"></i> campsites@nucamp.co</a>
             </div>
         </div>
 
         <div class="row row-content">
+            <!-- FEEDBACK -->
             <div class="col-12">
                 <h2>Send us your Feedback</h2>
                 <hr />
             </div>
+            <!-- FORM -->
             <div class="col-md-10">
-                Form goes here
+                <form action="https://learn.nucamp.co/show_everything.php" method="POST">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" placeholder="First Name">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" placeholder="Last Name">
+                    <label for="areaCode">Contact Tel.</label>
+                    <input type="tel" id="areaCode" name="areaCode" placeholder="Area Code">
+                    <input type="tel" id="telNum" placeholder="Tel. number">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email">
+                    May we contact you?
+                    <input type="radio" id="contactYes" name="contactRadios" value="yes">
+                    <label for="contactYes">Yes</label>
+                    <input type="radio" id="contactNo" name="contactRadios" value="no">
+                    <label for="contactNo">No</label>
+                    <label for="feedback">Your Feedback</label>
+                    <textarea name="feedback" id="feedback" rows="8"></textarea>
+                    <button type="submit">Send Feedback</button>
+                </form>
             </div>
-       </div>
+        </div>
 
     </div>
 
     <footer>
         <div class="container">
             <div class="row">
+                <!-- LINKS -->
                 <div class="col-4 col-sm-2 offset-1">
                     <h5>Links</h5>
                     <ul class="list-unstyled">
@@ -100,20 +139,29 @@
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
+                <!-- SOCIAL -->
+                <!-- On xs viewports this will take half of the columns in this row, but from sm and up it'll take up 5 columns -->
+                <!-- text-center = moves all to the center and applies to all viewport sizes.-->
                 <div class="col-6 col-sm-5 text-center">
                     <h5>Social</h5>
-                    <!-- base class | component | asset 
-                    We wrap the inital fa <i> or <span> element in anchor <a> tags and use the btn-social-icon buttons for the Social and Contact links-->
+
+                    <!-- Here we replaced the text links with font-awesome social icons -->
+                    <!-- The .btn-social-icon is now being used for the appearance of the social links -->
+                    <!-- Base Class | social-icon-toolkit | social site -->
                     <a class="btn btn-social-icon btn-instagram" href="http://instagram.com/"><i class="fa fa-instagram"></i></a>
                     <a class="btn btn-social-icon btn-facebook" href="http://facebook.com/"><i class="fa fa-facebook"></i></a>
-                    <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                    <a class="btn btn-social-icon btn-twitter" href="http://twitter.com"><i class="fa fa-twitter"></i></a>
                     <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
                 </div>
+                <!-- This takes up all 12 columns on xs viewports, which will bump this down, but on sm and up, take up 4 columns-->
                 <div class="col-sm-4 text-center">
-                    <a role="btn" class="btn btn-link" href="tel:+12065551234"><i class="fa fa-phone"></i> 1-206-555-1234</a><br />
-                    <a role="btn" class="btn btn-link" href="mailto:campsites@nucamp.co"><i role="btn" class="fa fa-envelope-o"></i> campsites@nucamp.co</a>
+                    <!-- Font-Awesome Icons for phone number and email address -->
+                    <!-- role="button" is useful for screen-readers
+                     The classes utilizes Bootstrap's base class followed by the button style to be usen on the fa icon-->
+                    <a role="button" class="btn btn-link" href="tel:+12065551234"><i class="fa fa-phone"></i> Tel: 1-206-555-1234</a> <br>
+                    <a role="button" class="btn btn-link" href="mailto:campsite@nucamp.co"><i class="fa fa-envelope-o"></i> Email: campsites@nucamp.com</a>
                 </div>
-           </div>
+            </div>
         </div>
     </footer>
 
