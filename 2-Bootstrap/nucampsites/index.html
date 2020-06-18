@@ -17,8 +17,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <!--  -->
-
+    <!-- Stylesheet for font-awesome icons -->
+    <link rel="stylesheet" href="../../node_modules/font-awesome/css/font-awesome.min.css">
     <!-- Additional CSS must be placed AFTER Bootstrap CSS to be sure your personal styles will override Bootstrap's correctly-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
     <!-- A Link to the font to be used from Google Fonts-->
@@ -66,10 +66,13 @@
                 <ul class="navbar-nav">
                     <!-- nav-item = helps with the appearance - active = highlights the appearance of that particular nav item -->
                     <!-- nav-link = specifies a nav-item's anchor tag and applies padding  -->
-                    <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Sites</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <!-- NOTE: You can use either the <i> or <span> element to place Font-Awesome icons within your webpage. The creators of Font-Awesome prefer to use <i> for brevity, but <span> is more semantically correct. -->
+                    <li class="nav-item active"><a class="nav-link" href="#"><i class="fa fa-home fa-lg"></i> Home</a></li>
+                    <!-- font-awesome syntax: base class | class name of the icon you want to use | optionally you can also use a sizing class -->
+                    <!-- By default the icons are black, but those can be styled just like regular text - by using custom CSS or Bootstrap's text color utility classes -->
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html"><i class="fa fa-info fa-lg"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-list fa-lg"></i> Sites</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-address-card fa-lg"></i> Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -138,14 +141,17 @@
                 <!-- text-center = moves all to the center and applies to all viewport sizes.-->
                 <div class="col-6 col-sm-5 text-center">
                     <h5>Social</h5>
-                    <a href="http://instagram.com/">Instagram</a>
-                    <a href="http://facebook.com/">Facebook</a>
-                    <a href="http://twitter.com">Twitter</a>
-                    <a href="http://youtube.com/">YouTube</a>
+                <!-- Here we replaced the text links with font-awesome social icons -->
+                    <a href="http://instagram.com/"><i class="fa fa-instagram fa-lg"></i></a>
+                    <a href="http://facebook.com/"><i class="fa fa-facebook fa-lg"></i></a>
+                    <a href="http://twitter.com"><i class="fa fa-twitter fa-lg"></i></a>
+                    <a href="http://youtube.com/"><i class="fa fa-youtube fa-lg"></i></a>
                 </div>
                 <!-- This takes up all 12 columns on xs viewports, which will bump this down, but on sm and up, take up 4 columns-->
                 <div class="col-sm-4 text-center">
-                    Tel: 1-206-555-1234 <br> Email: campsites@nucamp.com
+                    <!-- Font-Awesome Icons for phone number and email address -->
+                    <i class="fa fa-phone fa-lg text-primary"></i> Tel: 1-206-555-1234 <br> 
+                    <i class="fa fa-envelope fa-lg text-primary"></i> Email: campsites@nucamp.com
                 </div>
             </div>
         </div>
