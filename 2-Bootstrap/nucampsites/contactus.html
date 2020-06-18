@@ -103,28 +103,65 @@
             <!-- FORM -->
             <div class="col-md-10">
                 <form action="https://learn.nucamp.co/show_everything.php" method="POST">
-                    <div class="form-group-row">
-                        <label for="firstName">First Name</label>
-                    
+                    <!-- Wrap the labels and inputs as pairs with the form-group class
+                    and use the row class to put the input on the same line  
+                    wrap the inputs in a div with a .col to size it accordingly
+                    give the input the form-control class to style it -->
+                    <div class="form-group row">
+                    <!-- The classes for the label make it take up 2 columns on md and up
+                        The .col-form-label centers label on a vertical axis beside the input-->
+                        <label for="firstName" class="col-md-2 col-form-label">First Name</label>
                         <div class="col-md-10">
-                            <input type="text" id="firstName" placeholder="First Name">
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name">
                         </div>
                     </div>
-                    <label for="lastName">Last Name</label>
-                    <input type="text" id="lastName" placeholder="Last Name">
-                    <label for="areaCode">Contact Tel.</label>
-                    <input type="tel" id="areaCode" name="areaCode" placeholder="Area Code">
-                    <input type="tel" id="telNum" placeholder="Tel. number">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Email">
-                    May we contact you?
-                    <input type="radio" id="contactYes" name="contactRadios" value="yes">
-                    <label for="contactYes">Yes</label>
-                    <input type="radio" id="contactNo" name="contactRadios" value="no">
-                    <label for="contactNo">No</label>
-                    <label for="feedback">Your Feedback</label>
-                    <textarea name="feedback" id="feedback" rows="8"></textarea>
-                    <button type="submit">Send Feedback</button>
+                    <div class="form-group row">
+                        <label for="lastName" class="col-md-2 col-form-label">Last Name</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="areaCode" class="col-md-2 col-form-label">Contact Tel.</label>
+                        <div class="col-5 col-md-3">
+                            <input type="tel" class="form-control" id="areaCode" name="areaCode" placeholder="Area Code">
+                        </div>
+                        <div class="col-7">
+                            <input type="tel" class="form-control" id="telNum" placeholder="Tel. number">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-md-2 col-form-label">Email</label>
+                        <div class="col-md-10">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col offset-md-2">
+                            May we contact you?
+                            <!-- form-check-inline = moves the radio buttons inline
+                                 form-check-input = allows the rule above to apply to the inputs with this class-->
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="contactYes" name="contactRadios" value="yes">
+                                <label for="contactYes" class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="contactNo" name="contactRadios" value="no">
+                                <label for="contactNo" class="form-check-label">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="feedback" class="col-md-2 col-form-label">Your Feedback</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="feedback" id="feedback" rows="8"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="offset-md-2 col-md-10">
+                            <button type="submit" class="btn btn-primary">Send Feedback</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
