@@ -101,12 +101,49 @@
         </div>
         <!-- Our Mission -->
         <div class="row row-content">
-            <div class="col col-sm-6">
+            <div class="col-sm-6">
                 <h3>Our Mission</h3>
                 <p>We present a curated database of the best campsites in the vast woods and backcountry of the World Wide Web Wilderness. We increase access to adventure for the public while promoting safe and respectful use of resources. The expert wilderness
                     trekkers on our staff personally verify each campsite to make sure that they are up to our standards. We also present a platform for campers to share reviews on campsites they have visited with each other.</p>
             </div>
             <!-- TODO: Cards -->
+            <!-- This creates a card that takes up the remaining columns on this row
+                Each item in the card body takes up half of the columns regardless of screen size
+                Which styles it to appear across from one another -->
+                <!-- dl = definition list - dt = definition term - dd = definition description-->
+            <div class="col-sm-6">
+                <div class="card">
+                    <h3 class="card-header bg-primary text-white">Facts At a Glance</h3>
+                    <div class="card-body">
+                        <dl class="row">
+                            <dt class="col-6">Founded</dt>
+                            <dd class="col-6">February 3, 2016</dd>
+                            <dt class="col-6">No. of Campsites in 2019</dt>
+                            <dd class="col-6">563</dd>
+                            <dt class="col-6">No. of Reviews in 2019</dt>
+                            <dd class="col-6">4388</dd>
+                            <dt class="col-6">Employees</dt>
+                            <dd class="col-6">42</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <!-- Here we create a blockquote wrapped inside a card -->
+                <div class="card bg-light mt-3">
+                    <blockquote class="blockquote card-body">
+                        <p class="mb-0">I will not follow where the path may lead, but I will go where there is no path, and I will leave a trail.</p>
+                        <!-- NOTE: Since this isn't the only footer element being used, We have to differentiate and make a minor change to our styles.css file as well as any .html files that will be using the same <footer> element
+                            So we give our main footer for the webpage, the class name of "site-footer" and apply it to all the pages that will be using it   -->
+                        <footer class="blockquote-footer">Muriel Strode,
+                            <cite title="Source Title">"Wind-Wafted Wild Flowers" -
+                                The Open Court, 1903
+
+                            </cite>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
         </div>
         <!-- Community Partners -->
         <div class="row row-content">
@@ -123,9 +160,46 @@
             </div>
         </div>
         <!-- TODO: Tables -->
+        <div class="row row-content">
+            <div class="col-sm-9">
+                <h2>Facts &amp; Figures</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="bg-primary text-light">
+                                <th></th>
+                                <th>2016</th>
+                                <th>2017</th>
+                                <th>2018</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-primary">
+                            <tr>
+                                <th>Staff Wilderness Experts</th>
+                                <td>10</td>
+                                <td>20</td>
+                                <td>40</td>
+                            </tr>
+                            <tr>
+                                <th>New Campers</th>
+                                <td>256</td>
+                                <td>1,280</td>
+                                <td>5,360</td>
+                            </tr>
+                            <tr>
+                                <th>Square Miles Covered</th>
+                                <td>101,325</td>
+                                <td>423,000</td>
+                                <td>~3,000,000.000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <footer>
+    <footer class="site-footer">
         <div class="container">
             <div class="row">
                 <!-- Links -->

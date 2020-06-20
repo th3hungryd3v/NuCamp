@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lite": "lite-server",
-    "dev": "npm run lite"
+    "d3v": "npm run lite"
   },
   "repository": {
     "type": "git",
