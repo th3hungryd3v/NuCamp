@@ -1,7 +1,6 @@
-let me = "be";
-let you = "decide";
-
-if {
-    5 < 10;
-    console.log(me) 
+let me = "I";
+let you = " love";
+let us = " you"
+for (let i = 0; i < 3; i++) {
+    console.log(me + you + us); 
 }

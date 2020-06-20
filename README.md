@@ -1,7 +1,18 @@
-# NuCamp
-NuCamp Base Directory
+# NuCamp Bootcamp Main Directory
 
-Main NuCamp Folder for the BootCamp
+This is the Base Directory where all my work during the NuCamp BootCamp will be placed.
+
+## Table of Contents:
+
+1.HTML, CSS, && JavaScript
+
+2.Bootstrap
+
+3.React
+
+4.React Native
+
+5.NodeJS, Express, && MongoDB
 
 By:
 xXth3hungryd3vXx
