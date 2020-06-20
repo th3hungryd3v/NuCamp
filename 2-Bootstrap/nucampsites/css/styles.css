@@ -36,7 +36,7 @@ footer {
     Prevent the height of this class from becoming smaller than 200px */
 .row-content {
     padding: 50px 0;
-    border-bottom: 1px ridge;
+    border-bottom: 1px ridge #fff;
     min-height: 200px;
 }
 

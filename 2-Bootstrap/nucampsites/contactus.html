@@ -106,12 +106,16 @@
                     <!-- Wrap the labels and inputs as pairs with the form-group class
                     and use the row class to put the input on the same line  
                     wrap the inputs in a div with a .col to size it accordingly
-                    give the input the form-control class to style it -->
+                    give the input the form-control class to style it
+                    form-group = helps with the alignment of form elements, so it'll look nicer
+                    NOTE: Added to the parent class of our inputs and labels-->
                     <div class="form-group row">
-                    <!-- The classes for the label make it take up 2 columns on md and up
+                        <!-- The classes for the label make it take up 2 columns on md and up
                         The .col-form-label centers label on a vertical axis beside the input-->
                         <label for="firstName" class="col-md-2 col-form-label">First Name</label>
                         <div class="col-md-10">
+                            <!-- form-control = makes the inputs look better and modifies the padding 
+                        also allows you to use more form-control classes to control styles such as size, focus state, and more-->
                             <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name">
                         </div>
                     </div>
@@ -140,7 +144,7 @@
                         <div class="col offset-md-2">
                             May we contact you?
                             <!-- form-check-inline = moves the radio buttons inline
-                                 form-check-input = allows the rule above to apply to the inputs with this class-->
+                                 form-check-input/label = allows the parent with the form-check class to apply to the inputs with this class-->
                             <div class="form-check form-check-inline">
                                 <input type="radio" class="form-check-input" id="contactYes" name="contactRadios" value="yes">
                                 <label for="contactYes" class="form-check-label">Yes</label>
