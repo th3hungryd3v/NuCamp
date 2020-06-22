@@ -46,6 +46,9 @@
             <div class="row">
                 <!--Columns- content must be placed within columns and only columns can be immediate children of rows-->
                 <!-- No width is specified, so it will automatically layout as equal width columns = 12 colums xs viewports and up || col-xs-12 || full width of the row -->
+                <div class="col-4 col-sm-3 col-md-2 align-self-center">
+                    <a href="#"><img src="img/logo.png" class="img-fluid" alt="NuCamp Logo"></a>
+                </div>
                 <div class="col">
                     <h1>NuCamp</h1>
                     <h2>a better way to camp</h2>
@@ -60,10 +63,12 @@
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
         <!-- Wrapped the innards of our navbar to change the padding of our links when the viewport is md and above-->
         <div class="container">
+            <!-- Mini logo for Navbar -->
+            <a class="navbar-brand" href="#"><img src="img/logo.png" width="30" height="30" alt=""></a>
             <!-- This button will become our navbar-toggler when the viewport is sm and below -->
             <!-- navbar-toggler = component for the collapse plugin - collapse =  hides the content in our following span class - #nucampNavbar = the ID of the content to hide in our span class (icon)-->
             <!-- using the .ml-auto to move the toggler button to the right, the toggler always defaults to the left -->
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#nucampNavbar">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nucampNavbar">
         <!-- This is where our nav-links will hide behind when the viewport is sm and below -->
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -99,9 +104,19 @@
             </div>
             <!-- This column will get bumped down on xs viewports since the column above will take up all 12 columns -->
             <div class="col">
-                <h3>Our Campsites</h3>
-                <!-- The combination of this class will make this text display-nothing on xs viewports-->
-                <p class="d-none d-sm-block">Explore our growing database of curated campsites and leave your own reviews!</p>
+                <!-- Created a div with the .media, enveloping our img as well as all the text for this .col -->
+                <div class="media">
+                    <!-- .d-flex = flexbox container to transform direct children into flex items
+                        .mr-3 = pull containers to the right
+                        .img-thumbnail = give the image a rounded 1px white border -->
+                    <img class="d-flex mr-3 img-thumbnail" src="img/breadcrumb-trail-thumb.jpg" alt="Breadcrumb Trail">
+                    <!-- This wraps all the text for our .media-body and aligns to the center on the vertical -->
+                    <div class="media-body align-self-center">
+                        <h3>Our Campsites</h3>
+                        <!-- The combination of this class will make this text display-nothing on xs viewports-->
+                        <p class="d-none d-sm-block">Explore our growing database of curated campsites and leave your own reviews!</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -123,8 +138,13 @@
                 <h2 class="text-sm-right">Our Community Partners</h2>
             </div>
             <div class="col">
-                <h3>Bootstrap Outfitters</h3>
-                <p class="d-none d-sm-block">Bootstrap Outfitters supplies you with gear you need at prices you can't beat.</p>
+                <div class="media">
+                    <img class="d-flex mr-3 img-thumbnail" src="img/bootstrap-thumb.png" alt="Bootstrap Outfitters">
+                    <div class="media-body align-self-center">
+                        <h3>Bootstrap Outfitters</h3>
+                        <p class="d-none d-sm-block">Bootstrap Outfitters supplies you with gear you need at prices you can't beat.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

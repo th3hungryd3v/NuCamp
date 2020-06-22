@@ -45,6 +45,10 @@
             <!--row = Wrappers for columns-->
             <div class="row">
                 <!--Columns- content must be placed within columns and only columns can be immediate children of rows-->
+                <!-- Brand Logo for .jumbotron  -->
+                <div class="col-4 col-sm-3 col-md-2 align-self-center">
+                    <a href="index.html"><img src="img/logo.png" class="img-fluid" alt="NuCamp Logo"></a>
+                </div>
                 <!-- No width is specified, so it will automatically layout as equal width columns = 12 colums xs viewports and up || col-xs-12 || full width of the row -->
                 <div class="col">
                     <h1>NuCamp</h1>
@@ -61,10 +65,13 @@
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
         <!-- Wrapped the innards of our navbar to change the padding of our links when the viewport is md and above-->
         <div class="container">
+            <!-- Mini logo for Navbar -->
+            <a class="navbar-brand" href="index.html"><img src="img/logo.png" width="30" height="30" alt=""></a>
+                        <!-- Deleted the .ml-auto  -->
             <!-- This button will become our navbar-toggler when the viewport is sm and below -->
             <!-- navbar-toggler = component for the collapse plugin - collapse =  hides the content in our following span class - #nucampNavbar = the ID of the content to hide in our span class (icon)-->
             <!-- using the .ml-auto to move the toggler button to the right, the toggler always defaults to the left -->
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#nucampNavbar">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nucampNavbar">
         <!-- This is where our nav-links will hide behind when the viewport is sm and below -->
                 <span class="navbar-toggler-icon"> </span>
             </button>
