@@ -53,6 +53,9 @@
                     <h1>NuCamp</h1>
                     <h2>a better way to camp</h2>
                 </div>
+                <div class="col-md-4 col-xl-3 align-self-center">
+                    <a role="button" class="btn btn-info btn-lg mt-2 active" href="#reserveForm">Reserve Campsite</a>
+                </div>
             </div>
         </div>
     </header>
@@ -152,16 +155,17 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row row-content">
             <div class="col-sm-6 mx-auto">
                 <div class="card">
                     <h3 class="card-header bg-info text-white">Reserve a Campsite</h3>
                     <div class="card-body">
-                        <form action="https://learn.nucamp.co/show_everything.php" method="POST">
+                        <form class="form-group" id="reserveForm" action="https://learn.nucamp.co/show_everything.php" method="POST">
                             <div class="form-group row">
                                 <label class="col-form-label col-sm-6" for="numCampers">Number of Campers</label>
                                     <div class="col">
                                         <select class="col form-control" name="numCampers" id="numCampers" >
+                                            <option selected disabled>Select...</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -174,7 +178,7 @@
                             <div class="form-group row">
                                 <label class="col-form-label col-sm-6" for="date">Date</label>
                                 <div class="col">
-                                    <input class="col form-control" type="date" id="date" name="date" placeholder="date">
+                                    <input class="col form-control" type="date" id="date" name="date" placeholder="mm/dd/yyyy">
                                 </div>
                             </div>
                             <div class="form-group row">
