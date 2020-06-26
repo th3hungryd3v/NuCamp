@@ -45,7 +45,7 @@ header h2 {
 }
 
 .tab-content {
-    /* Creates a thin border around the tab content, on the bottom and sides, while also giving some padding all around to give it a more evenly spaced out appearance */
+    /* Creates a thin border around the tab content, on the bottom and sides, while also giving some padding all around to give it a evenly spaced out appearance */
     border: 1px solid #DDD;
     border-top: none;
     padding: 10px;
