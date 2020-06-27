@@ -1,0 +1,33 @@
+<div class="row row-content">
+    <div class="col">
+        <h3>Community Partners</h3>
+        <!-- TABS -->
+        <!-- Using the nav-tabs component will allow us to use tab navigation with the <li>s which will be attached to the tab panes by their IDs-->
+        <ul class="nav nav-tabs"> <!-- Base Nav Class | Nav Component Class |  -->
+            <li class="nav-item"><a class="nav-link active" role="tab" data-toggle="tab" href="#bootstrap">Bootstrap Outfitters</a></li> <!-- Add nav-item classes to all the list items to be used for our tabbed navigation -->
+            <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#git">Git Out Expeditions</a></li> <!-- Wrap the text in anchor tags while giving the class of .nav-link, role of tab, data-toggle of tab, and the href mirroring the text-->
+            <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#mongo">Mongo Fly Shop</a></li>
+            <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#node">Node Outdoor Apparel</a></li>
+        </ul>
+        <!-- Wrap all the content we want to connect to our .nav-tab component inside a div with the class of .tab-content -->
+        <div class="tab-content">
+            <!-- Wrap each header and paragraph inside a div with the role of tabpanel, class of tab-pane fade show active, and the id with the corresponding href -->
+            <div role="tabpanel" class="tab-pane fade show active" id="bootstrap">
+                <h4>Bootstrap Outfitters <small>Outdoor Gear Specialists</small></h4>
+                <p class="d-none d-sm-block">Bootstrap Outfitters supplies you with the gear you need at prices you can't beat.</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="git">
+                <h4>Git Out Expeditions <small>Group Adventure Expiditions</small></h4>
+                <p class="d-none d-sm-block">Join Git Out Expeditions to explore new horizons with a group of other adventurers!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="mongo">
+                <h4>Mongo Fly Shop <small>Your Neighborhood Fly Fishing Shop</small></h4>
+                <p class="d-none d-sm-block">Need a new fishing pole, a tacklebox, or flies of all kinds? Stop by Mongo Fly Shop</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="node">
+                <h4>Node Outdoor Apparel <small>Outdoor Clothes & Shoes</small></h4>
+                <p class="d-none d-sm-block">From polar fleeces to swimsuits, hiking boots to waders, a visit to Node will be sure to gey you covered.</p>
+            </div>
+        </div>
+    </div>
+</div>
