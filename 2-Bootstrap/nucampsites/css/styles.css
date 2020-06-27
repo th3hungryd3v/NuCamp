@@ -44,10 +44,29 @@ header h2 {
     background-color: #901CAD;
 }
 
-.tab-content {
-    /* Creates a thin border around the tab content, on the bottom and sides, while also giving some padding all around to give it a evenly spaced out appearance */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* REMOVED */
+/* .tab-content {
+    Creates a thin border around the tab content, on the bottom and sides, while also giving some padding all around to give it a evenly spaced out appearance
     border: 1px solid #DDD;
     border-top: none;
     padding: 10px;
-}
+} */
 
