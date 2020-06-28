@@ -54,7 +54,11 @@
                     <h2>a better way to camp</h2>
                 </div>
                 <div class="col-md-4 col-xl-3 align-self-center">
-                    <a role="button" class="btn btn-info btn-lg mt-2 active" href="#reserveForm">Reserve Campsite</a>
+                    <!-- data-toggle="tooltip" = turns the tooltip on when hovered over
+                        data-placement="auto" = reorients the tooltip placement dynamically
+                        data-html="true" =  allows you to use html inside the the title attribute
+                        title="whatever text you'd like to appear in the tooltip" = The content that shows up in the tooltip -->
+                    <a role="button" class="btn btn-info btn-lg active" href="#reserveForm" data-toggle="tooltip" data-placement="auto" data-html="true" title="Or call us at <br /><strong>1-206-555-1234</strong>">Reserve Campsite</a>
                 </div>
             </div>
         </div>
@@ -240,6 +244,14 @@
     <script src="../../node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Script written in JQuery to initalize and activate the tooltip component by the data-toggle attribute -->
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+
 </body>
 
 </html>
