@@ -95,9 +95,7 @@
                 </ul>
                 <!-- Login button will trigger a Modal when clicked -->
                 <span class="navbar-text ml-auto">
-                    <a href="" data-toggle="modal" data-target="#loginModal">
-                        <i class="fa fa-sign-in"></i> Login
-                    </a>
+                    <a href="#" data-toggle="modal" data-target="#loginModal"><i class="fa fa-sign-in"></i> Login</a>
                 </span>
             </div>
         </div>
@@ -150,6 +148,7 @@
         <div class="row row-content">
             <div class="col-md-8 mx-auto">
                 <!-- NOTE: This calls the carousel component which is built with custom CSS 3D transforms and JavaScript   -->
+                <!-- NOTE: The data-ride="carousel" attribute is used to mark a carousel as animating on page load -->
                 <div id="homeCarousel" class="carousel slide" data-ride="carousel">
                     <!-- NOTE: Carousel Indicators -->
                     <ol class="carousel-indicators">
@@ -169,26 +168,34 @@
                                 <!-- NOTE: Caption to be displayed on the bottom of the image -->
                                 <h3 class="">Breadcrumb Trail Campground</h3>
                                 <!-- NOTE: Display set to none, but on sm and above display is set to block -->
-                                <p class="d-none d-md-block">Let NuCamp be your guide to this off-the-beaten-path campground.</p>
+                                <p class="d-none d-sm-block">Let NuCamp be your guide to this off-the-beaten-path campground.</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="img/react-lake.jpg" alt="React Lake Campground" class="d-block w-100">
                             <div class="carousel-caption">
                                 <h3>React Lake Campground</h3>
-                                <p class="d-none d-md-block">Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.</p>
+                                <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="img/chrome-river.jpg" alt="Chrome River Campground" class="d-block w-100">
                             <div class="carousel-caption">
                                 <h3>Chrome River Campground</h3>
-                                <p class="d-none d-md-block">Spend a few sunny days and starry nights beneath a canpy of old-growth firs at this enchanting spot by the Chrome River.</p>
+                                <p class="d-none d-sm-block">Spend a few sunny days and starry nights beneath a canpy of old-growth firs at this enchanting spot by the Chrome River.</p>
                             </div>
                         </div>
                     </div>
                     <!-- NOTE: Carousel Controls -->
-                    
+                    <!-- NOTE: .data-slide class accepts the keywords prev or next, which alters the slide position relative to it's current position -->
+                    <a href="#homeCarousel" class="carousel-control-prev" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                        <span class="sr-only"></span>
+                    </a>
+                    <a href="#homeCarousel" class="carousel-control-next" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                        <span class="sr-only"></span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -204,7 +211,7 @@
              this flex item is now shifted onto the right side of the column-->
             <div class="col-sm-4 col-md-3 order-sm-last">
                 <!-- This class will align all the text inside h2 to the right on viewports sm and above -->
-                <h2>Discover & Review</h2>
+                <h2 class="text-sm-right">Discover & Review</h2>
             </div>
             <!-- This column will get bumped down on xs viewports since the column above will take up all 12 columns -->
             <div class="col">
@@ -260,7 +267,7 @@
         </div>
         <!-- FORM -->
         <div class="row row-content">
-            <div class="col-md-6 mx-auto">
+            <div class="col-md-8 mx-auto">
                 <div class="card">
                     <h3 class="card-header bg-info text-white">Reserve a Campsite</h3>
                     <div class="card-body">
