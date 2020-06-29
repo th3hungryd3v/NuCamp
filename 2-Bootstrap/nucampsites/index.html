@@ -102,12 +102,15 @@
             </div>
         </div>
     </nav>
-    <!-- Modal -->
+    <!-- Modal
+    NOTE: This can be coded anywhere on the page, but here we put it right after the login button  -->
     <div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 class="modal-title">Login</h3>
+                    <!-- This creates a cross button on the top-right corner to close the modal
+                    NOTE: You can also close the window by clicking anywhere outside the modal or by clicking cancel -->
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
@@ -115,6 +118,7 @@
                         <form action="https://learn.nucamp.co/show_everything.php" method="POST">
                             <div class="form-row">
                                 <div class="form-group col-12">
+                                    <!-- NOTE: Label is visible for screen-readers only -->
                                     <label for="loginEmail" class="sr-only">Email Address</label>
                                     <input type="email" class="form-control form-control-sm" id="loginEmail" placeholder="Enter Email">
                                 </div>
@@ -142,8 +146,56 @@
 
 
     <div class="container">
+        <!-- Carousel -->
+        <div class="row row-content">
+            <div class="col-md-8 mx-auto">
+                <!-- NOTE: This calls the carousel component which is built with custom CSS 3D transforms and JavaScript   -->
+                <div id="homeCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- NOTE: Carousel Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#homeCarousel" data-slide-to="1"></li>
+                        <li data-target="#homeCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <!-- NOTE: All of the carousel items (images/text) will go in here -->
+                    <div class="carousel-inner">
+                        <!-- NOTE: The .active class needs to be added to one of the slides
+                        IMPORTANT: Otherwise the carousel will not be visible -->
+                        <div class="carousel-item active">
+                            <!-- NOTE: The .d-block (display: block) and .w-100 (width: 100%) classes are added to prevent browser default image alignment -->
+                            <img src="img/breadcrumb-trail.jpg" alt="Breadcrumb Trail Campground" class="d-block w-100">
+                            <!-- NOTE: The .carousel-caption class makes it easy to add captions to your carousel, within a .carousel-item -->
+                            <div class="carousel-caption">
+                                <!-- NOTE: Caption to be displayed on the bottom of the image -->
+                                <h3 class="">Breadcrumb Trail Campground</h3>
+                                <!-- NOTE: Display set to none, but on sm and above display is set to block -->
+                                <p class="d-none d-md-block">Let NuCamp be your guide to this off-the-beaten-path campground.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/react-lake.jpg" alt="React Lake Campground" class="d-block w-100">
+                            <div class="carousel-caption">
+                                <h3>React Lake Campground</h3>
+                                <p class="d-none d-md-block">Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/chrome-river.jpg" alt="Chrome River Campground" class="d-block w-100">
+                            <div class="carousel-caption">
+                                <h3>Chrome River Campground</h3>
+                                <p class="d-none d-md-block">Spend a few sunny days and starry nights beneath a canpy of old-growth firs at this enchanting spot by the Chrome River.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- NOTE: Carousel Controls -->
+                    
+                </div>
+            </div>
+        </div>
+
         <!-- align-items-center = align all items inside this row to the center || align items on the cross axis (vertical) to the center inside flexbox containers-->
-    <!-- Row 1 -->
+        <!-- Row 1 
+    NOTE: Main Content-->
         <div class="row row-content align-items-center">
             <!--On sm viewports this h2 will take up 4 columns out of 12, but from md and up it'll take 3 columns -->
             <!--Note: on xs this will take up all 12 columns for this row which means: -->
@@ -173,7 +225,7 @@
         </div>
     </div>
     <div class="container">
-    <!-- Row 2  -->
+        <!-- Row 2  -->
         <div class="row row-content align-items-center">
             <div class="col-sm-4 col-md-3">
                 <h2 class="text-sm-left">Featured Campsites</h2>
@@ -191,7 +243,7 @@
     </div>
 
     <div class="container">
-    <!-- Row 3  -->
+        <!-- Row 3  -->
         <div class="row row-content align-items-center">
             <div class="col-sm-4 col-md-3 order-sm-last">
                 <h2 class="text-sm-right">Our Community Partners</h2>
@@ -206,7 +258,7 @@
                 </div>
             </div>
         </div>
-    <!-- FORM -->
+        <!-- FORM -->
         <div class="row row-content">
             <div class="col-md-6 mx-auto">
                 <div class="card">
@@ -215,8 +267,8 @@
                         <form class="form-group" id="reserveForm" action="https://learn.nucamp.co/show_everything.php" method="POST">
                             <div class="form-group row">
                                 <label class="col-form-label col-sm-6" for="numCampers">Number of Campers</label>
-                                    <div class="col">
-                                        <select class="col form-control" name="numCampers" id="numCampers" >
+                                <div class="col">
+                                    <select class="col form-control" name="numCampers" id="numCampers">
                                             <option selected disabled>Select...</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -225,7 +277,7 @@
                                             <option value="5">5</option>
                                             <option value="6">6</option>
                                         </select>
-                                    </div>
+                                </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-form-label col-sm-6" for="date">Date</label>
@@ -281,7 +333,7 @@
                     <!-- Font-Awesome Icons for phone number and email address -->
                     <!-- role="button" is useful for screen-readers
                      The classes utilizes Bootstrap's base class followed by the button style to be usen on the fa icon-->
-                     <!-- NOTE: The tel:/mailto: protocols being used for the link hrefsu -->
+                    <!-- NOTE: The tel:/mailto: protocols being used for the link hrefsu -->
                     <a role="button" class="btn btn-link" href="tel:+12065551234"><i class="fa fa-phone"></i> Tel: 1-206-555-1234</a> <br>
                     <a role="button" class="btn btn-link" href="mailto:campsite@nucamp.co"><i class="fa fa-envelope-o"></i> Email: campsites@nucamp.com</a>
                 </div>
@@ -295,7 +347,7 @@
 
     <!-- Script written in JQuery to initalize and activate the tooltip component by the data-toggle attribute -->
     <script>
-        $(function () {
+        $(function() {
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
