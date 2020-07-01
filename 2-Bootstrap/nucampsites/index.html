@@ -58,11 +58,70 @@
                         data-placement="auto" = reorients the tooltip placement dynamically
                         data-html="true" =  allows you to use html inside the the title attribute
                         title="whatever text you'd like to appear in the tooltip" = The content that shows up in the tooltip -->
-                    <a role="button" class="btn btn-info btn-lg active" href="#reserveForm" data-toggle="tooltip" data-placement="auto" data-html="true" title="Or call us at <br /><strong>1-206-555-1234</strong>">Reserve Campsite</a>
+                        <!-- href="#reserveForm" data-toggle="tooltip" data-placement="auto" data-html="true" title="Or call us at <br /><strong>1-206-555-1234</strong>" -->
+                        <!-- Transformed to a Modal - Will now trigger a modal of the Form we created at the bottom -->
+                    <a role="button" class="btn btn-info btn-lg active" data-toggle="modal" data-target="#reserveModal">Reserve Campsite</a>
                 </div>
             </div>
         </div>
     </header>
+    <!-- Reserve a Campsite Modal -->
+<div id="reserveModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-info text-white">
+                <h3 class="modal-title">Reserve a Campsite</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form class="form-group" id="reserveForm" action="https://learn.nucamp.co/show_everything.php" method="POST">
+                        <div class="form-group row">
+                            <label class="col-form-label col-sm-6" for="numCampers">Number of Campers</label>
+                            <div class="col">
+                                <select class="col form-control" name="numCampers" id="numCampers">
+                                    <option selected disabled>Select...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-sm-6" for="date">Date</label>
+                            <div class="col">
+                                <input class="col form-control" type="date" id="date" name="date" placeholder="mm/dd/yyyy">
+                            </div>
+                        </div>
+                        <!-- Campsite Type -->
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Campsite Type</label>
+                            <!-- Change to .col-sm-2 to match the workshop buttons -->
+                            <div class="col-sm-2 btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-success active">
+                                  <input type="radio" name="siteType" id="siteTent" value="tent">Tent
+                                </label>
+                                <label class="btn btn-primary">
+                                  <input type="radio" name="siteType" id="siteRV" value="RV">RV
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col">
+                                <!-- Cancel button -->
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <button class="btn btn-primary" type="submit">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <!-- navbar = base class for navbar component - most components have a base class that you have to apply before you can use any of the other classes for that component-->
     <!-- navbar-expand-sm = requires wrapping from .navbar for responsive collapsing and color scheme classes -  -->
     <!-- navbar-dark = indicates we're using a dark navbar style, which will cause the navbar items to be lighter for better contrast  -->
@@ -265,43 +324,6 @@
                 </div>
             </div>
         </div>
-        <!-- FORM -->
-        <div class="row row-content">
-            <div class="col-md-8 mx-auto">
-                <div class="card">
-                    <h3 class="card-header bg-info text-white">Reserve a Campsite</h3>
-                    <div class="card-body">
-                        <form class="form-group" id="reserveForm" action="https://learn.nucamp.co/show_everything.php" method="POST">
-                            <div class="form-group row">
-                                <label class="col-form-label col-sm-6" for="numCampers">Number of Campers</label>
-                                <div class="col">
-                                    <select class="col form-control" name="numCampers" id="numCampers">
-                                            <option selected disabled>Select...</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                        </select>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-form-label col-sm-6" for="date">Date</label>
-                                <div class="col">
-                                    <input class="col form-control" type="date" id="date" name="date" placeholder="mm/dd/yyyy">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col">
-                                    <button class="btn btn-primary" type="submit">Search</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <footer class="site-footer">
         <!-- LINKS -->
@@ -353,11 +375,11 @@
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Script written in JQuery to initalize and activate the tooltip component by the data-toggle attribute -->
-    <script>
+    <!-- <script>
         $(function() {
             $('[data-toggle="tooltip"]').tooltip()
         })
-    </script>
+    </script> -->
 
 </body>
 
