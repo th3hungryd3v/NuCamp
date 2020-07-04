@@ -60,21 +60,28 @@
                         title="whatever text you'd like to appear in the tooltip" = The content that shows up in the tooltip -->
                         <!-- href="#reserveForm" data-toggle="tooltip" data-placement="auto" data-html="true" title="Or call us at <br /><strong>1-206-555-1234</strong>" -->
                         <!-- Transformed to a Modal - Will now trigger a modal of the Form we created at the bottom -->
+                        <!-- Button Trigger Modal -->
+                        <!-- Add the correct data-* attributes to activate a modal = data-toggle="modal" target the ID of #reserveModal -->
                     <a role="button" class="btn btn-info btn-lg active" data-toggle="modal" data-target="#reserveModal">Reserve Campsite</a>
                 </div>
             </div>
         </div>
     </header>
     <!-- Reserve a Campsite Modal -->
+    <!-- Copy the whole top of the login modal up until the container that will hold the form -->
 <div id="reserveModal" class="modal fade" role="dialog">
+    <!-- Add the modal-lg to the .modal-dialog div to make the modal appear large  -->
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
+            <!-- take the text and color utility classes and place them in the div that wraps aroung the modal trigger button -->
             <div class="modal-header bg-info text-white">
                 <h3 class="modal-title">Reserve a Campsite</h3>
+               <!-- Create an X at the upper right of the modal that will dismiss(exit) the modal -->
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
+                    <!-- Add the form here -->
                     <form class="form-group" id="reserveForm" action="https://learn.nucamp.co/show_everything.php" method="POST">
                         <div class="form-group row">
                             <label class="col-form-label col-sm-6" for="numCampers">Number of Campers</label>
@@ -96,9 +103,15 @@
                                 <input class="col form-control" type="date" id="date" name="date" placeholder="mm/dd/yyyy">
                             </div>
                         </div>
+                        <!--  Create a new form-group row that has a label with the text "Campsite Type" -->
                         <!-- Campsite Type -->
                         <div class="form-group row">
+                            <!-- col-sm-6 to make the label take half the space on sm and up -->
+                            <!-- Apply the .col-form-label class as well -->
                             <label class="col-sm-6 col-form-label">Campsite Type</label>
+                            <!-- Add a div with the .col class -->
+                            <!-- Also apply the .btn-group and .btn-group-toggle class
+                                    give this the data-toggle="buttons" attribute as well -->
                             <!-- Change to .col-2 to match the workshop buttons -->
                             <div class="col-2 btn-group btn-group-toggle" data-toggle="buttons">
                                 <label class="btn btn-success active">
