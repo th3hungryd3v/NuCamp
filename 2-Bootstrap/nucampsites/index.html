@@ -99,8 +99,8 @@
                         <!-- Campsite Type -->
                         <div class="form-group row">
                             <label class="col-sm-6 col-form-label">Campsite Type</label>
-                            <!-- Change to .col-sm-2 to match the workshop buttons -->
-                            <div class="col-sm-2 btn-group btn-group-toggle" data-toggle="buttons">
+                            <!-- Change to .col-2 to match the workshop buttons -->
+                            <div class="col-2 btn-group btn-group-toggle" data-toggle="buttons">
                                 <label class="btn btn-success active">
                                   <input type="radio" name="siteType" id="siteTent" value="tent">Tent
                                 </label>
@@ -255,6 +255,15 @@
                         <span class="carousel-control-next-icon"></span>
                         <span class="sr-only"></span>
                     </a>
+                    <!-- Play && Pause Buttons -->
+                    <div class="btn-group" id="carouselButton">
+                        <button class="btn btn-danger btn-sm" id="carouselPause">
+                            <i class="fa fa-pause"></i>
+                        </button>
+                        <button class="btn btn-danger btn-sm" id="carouselPlay">
+                            <i class="fa fa-play"> </i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -381,6 +390,23 @@
         })
     </script> -->
 
+    <!-- JQuery script for the Play/Pause Buttons to work -->
+    <script>
+        // JQuery Ready Method
+        $(function() {
+            // Sets the carousel to cycle every 2 seconds, Default is 5000 (5 seconds)
+            $(".carousel").carousel( { interval: 2000 } );
+            // Attaches the matching ID to a click event which is #carouselPause
+            $("#carouselPause").click(function() {
+                // Should stop the carousel from cycling when pause button is clicked
+                $(".carousel").carousel("pause");
+            });
+            $("carouselPlay").click(function(){
+                // Should cause the carousel to cycle through images when play button is clicked
+                $(".carousel").carousel("cycle");
+            });
+        });
+    </script>
 </body>
 
 </html>

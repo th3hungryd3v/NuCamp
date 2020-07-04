@@ -55,6 +55,15 @@ header h2 {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+#carouselButton {
+    position: absolute;
+    /* position this to the all the way to the right */
+    right: 0;
+    /* Move this inside the carousel and put it in the bottom */
+    bottom: 0;
+    /* z-index: 1; */
+}
+
 
 
 
