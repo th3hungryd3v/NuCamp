@@ -261,7 +261,7 @@
                             <i class="fa fa-pause"></i>
                         </button>
                         <button class="btn btn-danger btn-sm" id="carouselPlay">
-                            <i class="fa fa-play"> </i>
+                            <i class="fa fa-play"></i>
                         </button>
                     </div>
                 </div>
@@ -393,15 +393,16 @@
     <!-- JQuery script for the Play/Pause Buttons to work -->
     <script>
         // JQuery Ready Method
+        // Shorthand of $( document).ready(function(){});
         $(function() {
             // Sets the carousel to cycle every 2 seconds, Default is 5000 (5 seconds)
             $(".carousel").carousel( { interval: 2000 } );
             // Attaches the matching ID to a click event which is #carouselPause
-            $("#carouselPause").click(function() {
+            $("#carouselPause").click(function(){
                 // Should stop the carousel from cycling when pause button is clicked
                 $(".carousel").carousel("pause");
             });
-            $("carouselPlay").click(function(){
+            $("#carouselPlay").click(function(){
                 // Should cause the carousel to cycle through images when play button is clicked
                 $(".carousel").carousel("cycle");
             });
