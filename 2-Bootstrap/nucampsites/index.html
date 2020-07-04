@@ -143,7 +143,7 @@
         <!-- Wrapped the innards of our navbar to change the padding of our links when the viewport is md and above-->
         <div class="container">
             <!-- Mini logo for Navbar -->
-            <a class="navbar-brand" href="#"><img src="img/logo.png" width="30" height="30" alt=""></a>
+            <a class="navbar-brand" href="#"><img src="img/logo.png" width="30" height="30" alt="NuCamp Logo"></a>
             <!-- This button will become our navbar-toggler when the viewport is sm and below -->
             <!-- navbar-toggler = component for the collapse plugin - collapse =  hides the content in our following span class - #nucampNavbar = the ID of the content to hide in our span class (icon)-->
             <!-- using the .ml-auto to move the toggler button to the right, the toggler always defaults to the left -->
@@ -390,6 +390,8 @@
     <script src="../../node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+
 
     <!-- Script written in JQuery to initalize and activate the tooltip component by the data-toggle attribute -->
     <!-- <script>
@@ -397,34 +399,6 @@
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script> -->
-
-    <!-- JQuery script for the Play/Pause Buttons to work -->
-    <script>
-        // JQuery Ready Method
-        // Shorthand of $( document).ready(function(){});
-        $(function() {
-            // Sets the carousel to cycle every 2 seconds, Default is 5000 (5 seconds)
-            $(".carousel").carousel( { interval: 2000 } );
-            // Attaches the matching ID to a click event which is #carouselPause
-            $("#carouselButton").click(function(){
-                // if this button is clicked, check the child nodes("i element") to see if it has a class(.hasClass("className") of "fa-pause"
-                if ($("#carouselButton").children("i").hasClass("fa-pause")) {
-                    // if it does, then we know the carousel is currently playing, So clicking on pause, will pause the carousel
-                    $(".carousel").carousel("pause");
-                    // when the pause button (#carouselButton) is clicked:
-                    // remove the i element child node that has the class of fa-pause(pause button)
-                    $("#carouselButton").children("i").removeClass("fa-pause");
-                    // And replace (add) it with the same element (i) child node but with a different class(font-awesome play button) to display the play button
-                    $("#carouselButton").children("i").addClass("fa-play");
-                } else {
-                    // otherwise, we know the carousel is currently paused and the play button(fa-play) is displayed and clicking the visible play button will start cycling the carousel again while changing to a pause button
-                    $(".carousel").carousel("cycle");
-                    $("#carouselButton").children("i").removeClass("fa-play");
-                    $("#carouselButton").children("i").addClass("fa-pause")
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>
