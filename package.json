@@ -6,9 +6,9 @@
   "scripts": {
     "lite": "lite-server",
     "watch:scss": "onchange '2-Bootstrap/nucampsites/css/*.scss' -- sudo npm run scss",
-    "watch:all": "parallelshell 'sudo npm run watch:scss' 'npm run lite' ",
+    "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'",
     "scss": "node-sass -o 2-Bootstrap/nucampsites/css/ 2-Bootstrap/nucampsites/css/",
-    "d3v": "npm run watch:all",
+    "start": "npm run watch:all",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
