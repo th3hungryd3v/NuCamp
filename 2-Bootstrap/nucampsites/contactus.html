@@ -17,19 +17,21 @@
 
     <!-- Bootstrap CSS -->
 
-
+    <!-- build:css css/main.css -->
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
 
-    <!-- Additional CSS must be placed AFTER Bootstrap CSS to be sure your personal styles will override Bootstrap's correctly-->
-
-    <!-- Stylesheet for font-awesome icons -->
+    
     <link rel="stylesheet" href="../../node_modules/font-awesome/css/font-awesome.min.css">
-    <!-- Bootstrap-Social modules for the buttons -->
     <link rel="stylesheet" href="../../node_modules/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- endbuild -->
+    <!-- Additional CSS must be placed AFTER Bootstrap CSS to be sure your personal styles will override Bootstrap's correctly-->
+    <!-- Stylesheet for font-awesome icons -->
+    <!-- Bootstrap-Social modules for the buttons -->
+    <!-- Designed to work specifically with fa icons and Bootstrap buttons together-->
+    <!--A link to our own personal stylesheet to be used to override Bootstrap's CSS styles-->
     <!-- A Link to the font to be used from Google Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
-    <!--A link to our own personal stylesheet to be used to override Bootstrap's CSS styles-->
-    <link rel="stylesheet" href="css/styles.css">
     <!-- Title - What you put in here shows up in the browser's tab -->
     <title>NuCamp: A Better Way To Camp</title>
 </head>
@@ -217,6 +219,12 @@
     </footer>
 
     <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
+    <!-- build:js js/main.js -->
     <script src="../../node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>
