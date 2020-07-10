@@ -20,7 +20,7 @@
     <!-- build:css css/main.css -->
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
 
-    
+
     <link rel="stylesheet" href="../../node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../node_modules/bootstrap-social/bootstrap-social.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -59,35 +59,36 @@
                         data-placement="auto" = reorients the tooltip placement dynamically
                         data-html="true" =  allows you to use html inside the the title attribute
                         title="whatever text you'd like to appear in the tooltip" = The content that shows up in the tooltip -->
-                        <!-- href="#reserveForm" data-toggle="tooltip" data-placement="auto" data-html="true" title="Or call us at <br /><strong>1-206-555-1234</strong>" -->
-                        <!-- Transformed to a Modal - Will now trigger a modal of the Form we created at the bottom -->
-                        <!-- Button Trigger Modal -->
-                        <!-- Add the correct data-* attributes to activate a modal = data-toggle="modal" target the ID of #reserveModal -->
-                    <a role="button" class="btn btn-info btn-lg active" data-toggle="modal" data-target="#reserveModal">Reserve Campsite</a>
+                    <!-- href="#reserveForm" data-toggle="tooltip" data-placement="auto" data-html="true" title="Or call us at <br /><strong>1-206-555-1234</strong>" -->
+                    <!-- Transformed to a Modal - Will now trigger a modal of the Form we created at the bottom -->
+                    <!-- Button Trigger Modal -->
+                    <!-- Add the correct data-* attributes to activate a modal = data-toggle="modal" target the ID of #reserveModal -->
+                    <a role="button" class="btn btn-info btn-lg active" id="reserveButton">Reserve Campsite</a>
+                    <!-- data-toggle="modal" data-target="#reserveModal" -->
                 </div>
             </div>
         </div>
     </header>
     <!-- Reserve a Campsite Modal -->
     <!-- Copy the whole top of the login modal up until the container that will hold the form -->
-<div id="reserveModal" class="modal fade" role="dialog">
-    <!-- Add the modal-lg to the .modal-dialog div to make the modal appear large  -->
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <!-- take the text and color utility classes and place them in the div that wraps aroung the modal trigger button -->
-            <div class="modal-header bg-info text-white">
-                <h3 class="modal-title">Reserve a Campsite</h3>
-               <!-- Create an X at the upper right of the modal that will dismiss(exit) the modal -->
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <!-- Add the form here -->
-                    <form class="form-group" id="reserveForm" action="https://learn.nucamp.co/show_everything.php" method="POST">
-                        <div class="form-group row">
-                            <label class="col-form-label col-sm-6" for="numCampers">Number of Campers</label>
-                            <div class="col">
-                                <select class="col form-control" name="numCampers" id="numCampers">
+    <div id="reserveModal" class="modal fade" role="dialog">
+        <!-- Add the modal-lg to the .modal-dialog div to make the modal appear large  -->
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <!-- take the text and color utility classes and place them in the div that wraps aroung the modal trigger button -->
+                <div class="modal-header bg-info text-white">
+                    <h3 class="modal-title">Reserve a Campsite</h3>
+                    <!-- Create an X at the upper right of the modal that will dismiss(exit) the modal -->
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <!-- Add the form here -->
+                        <form class="form-group" id="reserveForm" action="https://learn.nucamp.co/show_everything.php" method="POST">
+                            <div class="form-group row">
+                                <label class="col-form-label col-sm-6" for="numCampers">Number of Campers</label>
+                                <div class="col">
+                                    <select class="col form-control" name="numCampers" id="numCampers">
                                     <option selected disabled>Select...</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -96,51 +97,51 @@
                                     <option value="5">5</option>
                                     <option value="6">6</option>
                                 </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-form-label col-sm-6" for="date">Date</label>
-                            <div class="col">
-                                <input class="col form-control" type="date" id="date" name="date" placeholder="mm/dd/yyyy">
+                            <div class="form-group row">
+                                <label class="col-form-label col-sm-6" for="date">Date</label>
+                                <div class="col">
+                                    <input class="col form-control" type="date" id="date" name="date" placeholder="mm/dd/yyyy">
+                                </div>
                             </div>
-                        </div>
-                        <!--  Create a new form-group row that has a label with the text "Campsite Type" -->
-                        <!-- Campsite Type -->
-                        <div class="form-group row">
-                            <!-- col-sm-6 to make the label take half the space on sm and up -->
-                            <!-- Apply the .col-form-label class as well -->
-                            <label class="col-sm-6 col-form-label">Campsite Type</label>
-                            <!-- Add a div with the .col class -->
-                            <!-- Also apply the .btn-group and .btn-group-toggle class
+                            <!--  Create a new form-group row that has a label with the text "Campsite Type" -->
+                            <!-- Campsite Type -->
+                            <div class="form-group row">
+                                <!-- col-sm-6 to make the label take half the space on sm and up -->
+                                <!-- Apply the .col-form-label class as well -->
+                                <label class="col-sm-6 col-form-label">Campsite Type</label>
+                                <!-- Add a div with the .col class -->
+                                <!-- Also apply the .btn-group and .btn-group-toggle class
                                     give this the data-toggle="buttons" attribute as well -->
-                            <!-- Change to .col-2 to match the workshop buttons -->
-                            <div class="col-2 btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-success active">
+                                <!-- Change to .col-2 to match the workshop buttons -->
+                                <div class="col-2 btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-success active">
                                   <input type="radio" name="siteType" id="siteTent" value="tent">Tent
                                 </label>
-                                <label class="btn btn-primary">
+                                    <label class="btn btn-primary">
                                   <input type="radio" name="siteType" id="siteRV" value="RV">RV
                                 </label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col">
-                                <!-- Cancel button -->
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <button class="btn btn-primary" type="submit">Search</button>
+                            <div class="form-group row">
+                                <div class="col">
+                                    <!-- Cancel button -->
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    <button class="btn btn-primary" type="submit">Search</button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
     <!-- navbar = base class for navbar component - most components have a base class that you have to apply before you can use any of the other classes for that component-->
     <!-- navbar-expand-sm = requires wrapping from .navbar for responsive collapsing and color scheme classes -  -->
     <!-- navbar-dark = indicates we're using a dark navbar style, which will cause the navbar items to be lighter for better contrast  -->
     <!-- sticky-top = allows the navbar to stay stuck at the top of the page after you scroll past it-->
-    <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top">
         <!-- Wrapped the innards of our navbar to change the padding of our links when the viewport is md and above-->
         <div class="container">
             <!-- Mini logo for Navbar -->
@@ -167,8 +168,8 @@
                     <li class="nav-item"><a class="nav-link" href="contactus.html"><i class="fa fa-address-card fa-lg"></i> Contact</a></li>
                 </ul>
                 <!-- Login button will trigger a Modal when clicked -->
-                <span class="navbar-text ml-auto">
-                    <a href="#" data-toggle="modal" data-target="#loginModal"><i class="fa fa-sign-in"></i> Login</a>
+                <span class="btn btn-md col-sm-3 ml-auto navbar-text">
+                    <a id="loginButton" role="button"><i class="fa fa-sign-in"></i> Login</a> <!-- data-toggle="modal" data-target="#loginModal" -->
                 </span>
             </div>
         </div>
@@ -186,20 +187,20 @@
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
-                        <form action="https://learn.nucamp.co/show_everything.php" method="POST">
-                            <div class="form-row">
+                        <form class="form-group" id="loginForm" action="https://learn.nucamp.co/show_everything.php" method="POST">
+                            <div class="form-group row">
                                 <div class="form-group col-12">
                                     <!-- NOTE: Label is visible for screen-readers only -->
                                     <label for="loginEmail" class="sr-only">Email Address</label>
-                                    <input type="email" class="form-control form-control-sm" id="loginEmail" placeholder="Enter Email">
+                                    <input type="email" class="form-control form-control-sm" id="loginEmail" name="email" placeholder="Enter Email">
                                 </div>
                                 <div class="form-group col-12">
                                     <label for="loginPassword" class="sr-only">Password</label>
-                                    <input type="password" class="form-control form-control-sm" id="loginPassword" placeholder="Password">
+                                    <input type="password" class="form-control form-control-sm" id="loginPassword" name="password" placeholder="Password">
                                 </div>
                                 <div class="col">
                                     <div class="form-check">
-                                        <input type="checkbox" class="form-check-input">
+                                        <input type="checkbox" class="form-check-input" name="rememberMe">
                                         <label class="form-check-label">Remember Me</label>
                                     </div>
                                 </div>
@@ -270,7 +271,7 @@
                         <span class="sr-only"></span>
                     </a>
                     <!-- Play && Pause Buttons -->
-                        <button class="btn btn-danger btn-sm" id="carouselButton">
+                    <button class="btn btn-danger btn-sm" id="carouselButton">
                             <i class="fa fa-pause"></i>
                         </button>
                 </div>
@@ -408,7 +409,7 @@
 
 <!-- Old JQuery with 2 buttons -->
 <!-- <script> -->
-    <!-- // JQuery Ready Method
+<!-- // JQuery Ready Method
     // Shorthand of $( document).ready(function(){});
     // $(function() {
         // Sets the carousel to cycle every 2 seconds, Default is 5000 (5 seconds)

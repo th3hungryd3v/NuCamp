@@ -22,4 +22,19 @@
                     $("#carouselButton").children("i").addClass("fa-pause")
                 }
             });
+            $("#reserveButton").click(function(){ // Attach the button with the ID of reserveButton to a jQuery click() method
+                if ($("#reserveButton").modal("hide")) { // if the reserveButton is hiding "not displayed" before the button is clicked
+                    $("#reserveModal").modal("show"); // then display the reserveModal when the reserveButton is clicked
+                } else { // otherwise
+                    $("#reserveModal").modal("hide"); // the reserveModal should stay hidden
+                }
+            })
+            $("#loginButton").click(function(){
+                if ($("#loginButton").modal("hide")) {
+                    $("#loginModal").modal("show");
+                } else {
+                    $("#loginModal").modal("hide");
+                }
+            })            
+
         });
