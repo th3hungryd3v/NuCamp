@@ -56,3 +56,11 @@ header h2 {
   /* Move this inside the carousel and put it in the bottom */
   bottom: 0;
   /* z-index: 1; */ }
+
+#reserveModal .modal-header {
+  background-color: #17A2B8;
+  color: white; }
+
+#loginModal .modal-header {
+  background-color: #901CAD;
+  color: white; }
