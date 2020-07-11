@@ -40,7 +40,7 @@
     <!--A lightweight, flexible component for showcasing hero unit style content.-->
     <!-- .jumbotron-fluid is used because the rounded corners are visible since we changed the plain white background to a different color.
     Now the .jumbotron takes up the full width and the rounded corners are no longer visible-->
-    <header class="jumbotron jumbotron-fluid">
+    <header class="jumbotron">
         <!--A basic layout element in Bootstrap- required to use default grid system- used to contain, pad, and (sometimes) center the content within them-->
         <div class="container">
             <!--row = Wrappers for columns-->
@@ -76,7 +76,8 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <!-- take the text and color utility classes and place them in the div that wraps aroung the modal trigger button -->
-                <div class="modal-header"> <!-- bg-info text-white -->
+                <div class="modal-header">
+                    <!-- bg-info text-white -->
                     <h3 class="modal-title">Reserve a Campsite</h3>
                     <!-- Create an X at the upper right of the modal that will dismiss(exit) the modal -->
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -168,8 +169,8 @@
                     <li class="nav-item"><a class="nav-link" href="contactus.html"><i class="fa fa-address-card fa-lg"></i> Contact</a></li>
                 </ul>
                 <!-- Login button will trigger a Modal when clicked -->
-                <span class="btn btn-md col-sm-3 ml-auto navbar-text">
-                    <a id="loginButton" role="button"><i class="fa fa-sign-in"></i> Login</a> <!-- data-toggle="modal" data-target="#loginModal" -->
+                <span class="col-sm-3 ml-auto navbar-text">
+                    <a class="btn" id="loginButton" role="button"><i class="fa fa-sign-in"></i> Login</a> <!-- data-toggle="modal" data-target="#loginModal" -->
                 </span>
             </div>
         </div>
