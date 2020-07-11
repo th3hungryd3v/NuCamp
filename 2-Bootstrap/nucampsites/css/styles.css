@@ -1,5 +1,12 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* Use these fonts for all the text in the Document */
 body {
+  width: 100vw;
   font-family: "Montserrat", sans-serif; }
 
 /* Use this Font for each of these headers exclusively */
@@ -36,7 +43,7 @@ header h2 {
 .row-content {
   padding: 50px 0;
   border-bottom: 1px ridge #fff;
-  min-height: 200px; }
+  min-height: 250px; }
 
 .navbar {
   background-color: #901CAD; }

@@ -44,7 +44,7 @@ header {
     Color any text in the jumbotron to white
     Apply 0 margin to remove the space between the <header> and the .navbar*/
 
-.jumbotron {
+.jumbotron-fluid {
     margin: 0;
     padding: 30px;
     background-image: linear-gradient(to right, $color-secondary, $color-primary, $color-dark);
