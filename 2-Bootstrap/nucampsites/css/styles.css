@@ -1,90 +1,53 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-
 /* Use these fonts for all the text in the Document */
-
 body {
-  min-width: 100vw;
-  font-family: "Montserrat", sans-serif;
-}
-
+  font-family: "Montserrat", sans-serif; }
 
 /* Use this Font for each of these headers exclusively */
-
-h1,
-h2,
-h3 {
-  font-family: "Lobster", cursive;
-}
-
+h1, h2, h3 {
+  font-family: "Lobster", cursive; }
 
 /* All h2's should use this color for the text */
-
 h2 {
-  color: #3046C5;
-}
-
+  color: #3046C5; }
 
 /* Any header parent with h2 children should color their text using this color */
-
 header h2 {
-  color: #CEC8FF;
-}
-
+  color: #CEC8FF; }
 
 /* Use this gradient as a background image for this element and all the children inside
     Apply padding to the top and bottom of all the children inside the footer element */
-
 .site-footer {
   background-image: linear-gradient(#CEC8FF, white);
-  padding: 20px 0;
-}
-
+  padding: 20px 0; }
 
 /* Apply padding to all sides of the content inside the jumbotron
     Apply linear-gradient as a background image with these colors starting from the left side
     Color any text in the jumbotron to white
     Apply 0 margin to remove the space between the <header> and the .navbar*/
-
-.jumbotron {
-  margin: auto;
-  padding: 30px;
+.jumbotron-fluid {
+  margin: 0;
+  padding: 40px;
   background-image: linear-gradient(to right, #5637DD, #3046C5, #60106B);
-  color: white;
-}
-
+  color: white; }
 
 /* Add additional padding to the tops and bottoms wherever this class is applied to
     Add a ridged border to the bottom that's 1px wide
     Prevent the height of this class from becoming smaller than 200px */
-
 .row-content {
   padding: 50px 0;
   border-bottom: 1px ridge #fff;
-  min-height: 200px;
-}
+  min-height: 200px; }
 
 .navbar {
-  background-color: #901CAD;
-}
-
+  background-color: #901CAD; }
 
 /* Add a border around the carousel */
-
 .carousel {
-  border: solid #5637DD;
-}
-
+  border: solid #5637DD; }
 
 /* Add transparent background to make the captions easier to read */
-
 .carousel-caption {
-  background-color: rgba(0, 0, 0, 0.5);
-}
+  background-color: rgba(0, 0, 0, 0.5); }
 
 #carouselButton {
   position: absolute;
@@ -92,15 +55,12 @@ header h2 {
   right: 0;
   /* Move this inside the carousel and put it in the bottom */
   bottom: 0;
-  /* z-index: 1; */
-}
+  /* z-index: 1; */ }
 
 #reserveModal .modal-header {
   background-color: #17A2B8;
-  color: white;
-}
+  color: white; }
 
 #loginModal .modal-header {
   background-color: #901CAD;
-  color: white;
-}
+  color: white; }
