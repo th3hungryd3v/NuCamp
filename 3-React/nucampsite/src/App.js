@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import {Navbar, NavbarBrand } from 'reactstrap'
-import './App.css';
-
+import React, { Component } from "react";
+import { Navbar, NavbarBrand } from "reactstrap";
+import "./App.css";
 
 class App extends Component {
   render() {
@@ -9,7 +8,9 @@ class App extends Component {
       <div className="App">
         <Navbar dark color="primary">
           <div className="container">
-            <NavbarBrand href="/">NuCamp Bo0tCamp</NavbarBrand>
+            <NavbarBrand href="/">
+              NuCamp Bo0tCamp
+            </NavbarBrand>
           </div>
         </Navbar>
       </div>
@@ -40,4 +41,3 @@ export default App;
 //     </div>
 //   );
 // }
-
