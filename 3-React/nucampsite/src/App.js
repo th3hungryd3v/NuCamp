@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { Component } from "react";
 import { Navbar, NavbarBrand } from "reactstrap";
 import "./App.css";
@@ -8,6 +9,11 @@ import React, { Component } from 'react';
 import {Navbar, NavbarBrand } from 'reactstrap'
 import './App.css';
 
+=======
+import React, { Component } from "react";
+import { Navbar, NavbarBrand } from "reactstrap";
+import "./App.css";
+>>>>>>> cba7ac54f717dd415476fa4a947b27196af6a71a
 
 >>>>>>> ebe550aab4a131020204a4c43eb9db504df998d0
 class App extends Component {
@@ -17,12 +23,18 @@ class App extends Component {
         <Navbar dark color="primary">
           <div className="container">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <NavbarBrand href="/">
               NuCamp Bo0tCamp
             </NavbarBrand>
 =======
             <NavbarBrand href="/">NuCamp Bo0tCamp</NavbarBrand>
 >>>>>>> ebe550aab4a131020204a4c43eb9db504df998d0
+=======
+            <NavbarBrand href="/">
+              NuCamp Bo0tCamp
+            </NavbarBrand>
+>>>>>>> cba7ac54f717dd415476fa4a947b27196af6a71a
           </div>
         </Navbar>
       </div>
@@ -61,8 +73,11 @@ export default App;
 //     </div>
 //   );
 // }
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 export default App;
 =======
 >>>>>>> ebe550aab4a131020204a4c43eb9db504df998d0
+=======
+>>>>>>> cba7ac54f717dd415476fa4a947b27196af6a71a
