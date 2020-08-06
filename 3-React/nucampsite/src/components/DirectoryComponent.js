@@ -7,7 +7,7 @@ class Directory extends Component { // Create a child class Directory using the 
     constructor(props) { // props || properties = The only argument that is required when using a constructor() method to create class components.
         super(props); // super(props) = 1st line of the constructor() method required ** alleviates having to use this.props = props in the constructor(), all that happens in the base component in the parent class Component
         this.state = { // state = special property in React ** Always needs to hold an object
-            selectedCampsite: null
+            selectedCampsite: null // keeps track of the last clicked campsite ** set to null
     };
 
 }
