@@ -47,9 +47,7 @@ renderComments(comments) {
             )
         }
         return (
-            <div>
-                
-            </div>
+            <div />
         )
     }
 }
