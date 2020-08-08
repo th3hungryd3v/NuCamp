@@ -10,7 +10,7 @@ class CampsiteInfoComponent extends Component {
 renderCampsite(campsite) {
     return(
         <div className="col-md-5 m-1">
-            <Card>
+            <Card className="border border-secondary">
                 <CardImg top src={campsite.image} alt={campsite.name} />
                 <CardBody>
                     <CardTitle>{campsite.name}</CardTitle>
