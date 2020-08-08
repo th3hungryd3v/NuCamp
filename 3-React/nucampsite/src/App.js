@@ -13,9 +13,10 @@ class App extends Component { // Create child class of Component imported from R
     };
   }
 
-  render() {
-    return (
-      <div className="App">
+  render() { // Passed up the chain to the next parent
+    return ( // return a div with className of App
+      // Anything outside of this "App" div will NOT be rendered
+      <div className="App"> 
         <Navbar dark color="primary">
           <div className="container">
             <NavbarBrand href="/">NuCamp</NavbarBrand>
