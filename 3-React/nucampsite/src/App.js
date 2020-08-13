@@ -1,28 +1,14 @@
 //~~**##__ IMPORTS __##--**~~\\
 import React, { Component } from "react";
-import { Navbar, NavbarBrand } from "reactstrap";
-import Directory from "./components/DirectoryComponent"
-import { CAMPSITES } from "./shared/campsites"
+import Main from "./components/MainComponent";
 import "./App.css";
 
 class App extends Component { // Create child class of Component imported from React
-  constructor(props) {
-    super(props);
-    this.state = { 
-      campsites: CAMPSITES
-    };
-  }
-
-  render() { // Passed up the chain to the next parent
+    render() { // Passed up the chain to the next parent
     return ( // return a div with className of App
       // Anything outside of this "App" div will NOT be rendered
       <div className="App"> 
-        <Navbar dark color="primary">
-          <div className="container">
-            <NavbarBrand href="/">NuCamp</NavbarBrand>
-          </div>
-        </Navbar>
-        <Directory campsites={this.state.campsites} />
+        <Main />
       </div>
     );
   };
