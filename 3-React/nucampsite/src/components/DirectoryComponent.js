@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
+import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
 import { CampsiteInfoComponent } from './CampsiteInfoComponent'
 
 // Everytime you make a react class component with a constructor() method, the next line of code should be super(props).
