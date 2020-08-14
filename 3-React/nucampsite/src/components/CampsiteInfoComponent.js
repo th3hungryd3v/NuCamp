@@ -54,4 +54,4 @@ renderComments(comments) {
     }
 }
 
-export { CampsiteInfoComponent };
+export default CampsiteInfoComponent;
