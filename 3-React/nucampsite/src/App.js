@@ -1,15 +1,18 @@
 //~~**##__ IMPORTS __##--**~~\\
 import React, { Component } from "react";
 import Main from "./components/MainComponent";
+import { BrowserRouter } from 'react-router-dom';
 import "./App.css";
 
 class App extends Component { // Create child class of Component imported from React
     render() { // Passed up the chain to the next parent
     return ( // return a div with className of App
       // Anything outside of this "App" div will NOT be rendered
-      <div className="App"> 
-        <Main />
-      </div>
+      <BrowserRouter>
+        <div className="App"> 
+          <Main />
+        </div>
+      </BrowserRouter>
     );
   };
 }
