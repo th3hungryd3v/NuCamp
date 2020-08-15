@@ -1,6 +1,7 @@
 //~~**##__ IMPORTS __##--**~~\\
 import React, { Component } from "react";
-import { Navbar, NavbarBrand } from "reactstrap";
+import Header from './HeaderComponent';
+import Footer from './FooterComponent'
 import Directory from "./DirectoryComponent"
 import CampsiteInfoComponent from './CampsiteInfoComponent'
 import { CAMPSITES } from "../shared/campsites"
@@ -21,14 +22,11 @@ class Main extends Component { // Create child class of Component imported from 
   render() { // Passed up the chain to the next parent
     return ( // return a div with className of App
       // Anything outside of this "App" div will NOT be rendered
-      <div> 
-        <Navbar dark color="primary">
-          <div className="container">
-            <NavbarBrand href="/">NuCamp</NavbarBrand>
-          </div>
-        </Navbar>
+      <div>
+        <Header /> 
         <Directory campsites={this.state.campsites} onClick={campsiteId => this.onCampsiteSelect(campsiteId)} />
         <CampsiteInfoComponent campsite={this.state.campsites.filter(campsite => campsite.id === this.state.selectedCampsite)[0]} />
+        <Footer />
       </div>
     );
   };
