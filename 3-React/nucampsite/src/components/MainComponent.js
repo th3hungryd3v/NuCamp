@@ -4,6 +4,7 @@ import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Directory from "./DirectoryComponent";
 import Home from './HomeComponent';
+import Contact from './ContactComponent'
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { CAMPSITES } from "../shared/campsites";
 
@@ -27,6 +28,7 @@ class Main extends Component { // Create child class of Component imported from 
         <Header /> 
         <Switch>
           <Route path='/home' component={HomePage} />
+          <Route exact path='/contactus' component={Contact} />
           <Route exact path='/directory' render={() => <Directory campsites={this.state.campsites} />} />
           <Redirect to='/home' />
         </Switch>
