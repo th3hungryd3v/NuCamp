@@ -2,12 +2,13 @@
 import React, { Component } from "react";
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
-import Directory from "./DirectoryComponent";
+import Directory from './DirectoryComponent';
 import CampsiteInfo from './CampsiteInfoComponent'
 import Home from './HomeComponent';
+import About from './AboutComponent';
 import Contact from './ContactComponent'
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { CAMPSITES } from "../shared/campsites";
+import { CAMPSITES } from '../shared/campsites';
 import { COMMENTS } from '../shared/comments';
 import { PARTNERS } from '../shared/partners';
 import { PROMOTIONS } from '../shared/promotions';
@@ -34,6 +35,9 @@ class Main extends Component { // Create child class of Component imported from 
       )
     }
 
+
+
+
     const CampsiteWithId = ({match}) => {
       return (
           <CampsiteInfo 
@@ -44,13 +48,13 @@ class Main extends Component { // Create child class of Component imported from 
     }
 
     return ( // return a div with className of App
-      // Anything outside of this "App" div will NOT be rendered
       <div>
         <Header /> 
         <Switch>
           <Route path='/home' component={HomePage} />
           <Route exact path='/directory' render={() => <Directory campsites={this.state.campsites} />} />
           <Route path='/directory/:campsiteId' component={CampsiteWithId} />
+          <Route exact path='/aboutus' render={() => <About partners={this.state.partners} />} />
           <Route exact path='/contactus' component={Contact} />
           <Redirect to='/home' />
         </Switch>
