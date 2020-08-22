@@ -2,17 +2,22 @@
 import React, { Component } from "react";
 import Main from "./components/MainComponent";
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux'
+import { ConfigureStore } from './redux/configureStore'
 import "./App.css";
 
+const store = ConfigureStore();
 class App extends Component { // Create child class of Component imported from React
     render() { // Passed up the chain to the next parent
     return ( // return a div with className of App
       // Anything outside of this "App" div will NOT be rendered
-      <BrowserRouter>
-        <div className="App"> 
-          <Main />
-        </div>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <div className="App"> 
+            <Main />
+          </div>
+        </BrowserRouter>
+      </Provider>
     );
   };
 }
