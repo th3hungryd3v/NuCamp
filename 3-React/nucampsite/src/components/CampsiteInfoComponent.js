@@ -60,7 +60,7 @@ class CommentForm extends Component {
                   name="rating"
                   className="form-control"
                 >
-                  <option>Select</option>
+                  <option selected disabled>Select</option>
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
