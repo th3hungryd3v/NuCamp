@@ -20,7 +20,7 @@ import { Link } from "react-router-dom";
 //             super(props);
 //             this.state = {};
 //         }
-
+const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
 const minLength = (len) => (val) => val && val.length >= len;
 class CommentForm extends Component {
@@ -77,6 +77,7 @@ class CommentForm extends Component {
                   placeholder="Your Name"
                   className="form-control"
                   validators={{
+                    required,
                     minLength: minLength(2),
                     maxLength: maxLength(15),
                   }}
@@ -87,6 +88,7 @@ class CommentForm extends Component {
                   show="touched"
                   component="div"
                   messages={{
+                    required: "Required",
                     minLength: "Must be at least 2 characters",
                     maxLength: "Must be 15 characters or less",
                   }}
@@ -101,7 +103,8 @@ class CommentForm extends Component {
                   rows="6"
                   className="form-control"
                   validators={{
-                    minLength: minLength(2),
+                    required,
+                    minLength: minLength(2)
                   }}
                 />
                 <Errors
@@ -110,6 +113,7 @@ class CommentForm extends Component {
                   show="touched"
                   component="div"
                   messages={{
+                    required: "Required",
                     minLength: "Must be at least 2 characters",
                   }}
                 />
