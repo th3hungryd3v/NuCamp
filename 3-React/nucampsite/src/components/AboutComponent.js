@@ -46,7 +46,7 @@ function PartnerList(props) {
   if (props.partners.errMess) {
     return (
       <div className="col">
-        <h4>{props.parnters.errMess}</h4>
+        <h4>{props.partners.errMess}</h4>
       </div>
     )
   };
