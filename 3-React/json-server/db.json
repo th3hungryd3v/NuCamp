@@ -201,6 +201,14 @@
       "text": "It's a game of Roulette, so have a blast!",
       "date": "2020-08-29T22:41:39.300Z",
       "id": 20
+    },
+    {
+      "campsiteId": 3,
+      "rating": "5",
+      "author": "adfadfasdf",
+      "text": "adfadfdsfdsaf",
+      "date": "2020-08-30T00:52:38.946Z",
+      "id": 21
     }
   ],
   "partners": [

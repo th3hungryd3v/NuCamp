@@ -157,10 +157,10 @@ function RenderComments({ comments, postComment, campsiteId }) {
     return (
       <div className="col-md-5 m-1">
         <h4>Comments</h4>
-        <Stagger in>
+        <Stagger in reverse>
           {comments.map((comment) => {
             return (
-              <Fade in key={comment.id}> // key must be placed in the very first element
+              <Fade in key={comment.id}>
                 <div>
                   <p>
                     {comment.text} <br />

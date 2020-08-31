@@ -11,18 +11,18 @@ import { InitialFeedback } from './forms'
 
 
 export const ConfigureStore = () => {
-  const store = createStore(
-      combineReducers({
-          campsites: Campsites,
-          comments: Comments,
-          partners: Partners,
-          promotions: Promotions,
-          ...createForms({
-              feedbackForm: InitialFeedback
-          })
-      }),
-      applyMiddleware(thunk,logger)
-      );
+    const store = createStore(
+        combineReducers({
+            campsites: Campsites,
+            comments: Comments,
+            partners: Partners,
+            promotions: Promotions,
+            ...createForms({
+                feedbackForm: InitialFeedback
+            })
+        }),
+        applyMiddleware(thunk, logger)
+    );
 
-  return store;
+    return store;
 };
