@@ -10,9 +10,9 @@ class Home extends Component {
     render() {
         return (
             <View>
-                <Text>Home Components</Text>
+                <Text>Home Component</Text>
             </View>
-        )
+        );
     }
 }
 export default Home;
