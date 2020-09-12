@@ -30,13 +30,12 @@ function RenderPartner({ partner }) {
 function PartnerList(props) {
   const partners = props.partners.partners.map((partner) => {
     return (
-
       <Fade in key={partner.id}>
-        <Stagger in>
-          <Media tag="li">
+        <Media tag="li">
+          <Stagger in>
             <RenderPartner partner={partner} />
-          </Media>
-        </Stagger>
+          </Stagger>
+        </Media>
       </Fade>
     );
   });
