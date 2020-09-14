@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { FlatList } from "react-native"; // wrap around all the list items
-import { ListItem } from "react-native-elements"; // Used on every single item on the list
-import { CAMPSITES } from "../shared/campsites";
+import React, { Component } from 'react';
+import { FlatList } from 'react-native'; // wrap around all the list items
+import { ListItem } from 'react-native-elements'; // Used on every single item on the list
+import { CAMPSITES } from '../shared/campsites';
 
 class Directory extends Component {
     
