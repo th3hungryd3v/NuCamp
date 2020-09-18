@@ -1,0 +1,1 @@
+export const baseUrl = 'http://192.168.10.64:3001/'; //  Ternary Operator ==> ? 'http://0.0.0.0:3001' : console.error('Network Error')
