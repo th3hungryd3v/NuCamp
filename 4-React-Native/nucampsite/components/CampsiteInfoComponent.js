@@ -12,28 +12,26 @@ const mapStateToProps = state => {
 };
 
 function RenderCampsite(props) {
-  const { campsite } = props;
+  const {campsite} = props;
   if (campsite) {
-    return (
-      <Card
-        featuredTitle={campsite.name}
-        image={{uri: baseUrl + campsite.image}}
-      >
-        <Text style={{ margin: 10 }}>{campsite.description}</Text>
-        <Icon
-          name={props.favorite ? "heart" : "heart-o"}
-          type="font-awesome"
-          color="#f50"
-          raised
-          reverse
-          onPress={() =>
-            props.favorite
-              ? console.log("Already set as a favorite.")
-              : props.markFavorite()
-          }
-        />
-      </Card>
-    );
+      return (
+          <Card
+              featuredTitle={campsite.name}
+              image={{uri: baseUrl + campsite.image}}>
+              <Text style={{margin: 10}}>
+                  {campsite.description}
+              </Text>
+              <Icon
+                  name={props.favorite ? 'heart' : 'heart-o'}
+                  type='font-awesome'
+                  color='#f50'
+                  raised
+                  reverse
+                  onPress={() => props.favorite ?
+                      console.log('Already set as a favorite') : props.markFavorite()}
+              />
+          </Card>
+      );
   }
   return <View />;
 }
