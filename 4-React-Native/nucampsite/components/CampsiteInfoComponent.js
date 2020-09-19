@@ -1,44 +1,47 @@
 import React, { Component } from "react";
 import { Text, View, ScrollView, FlatList } from "react-native";
 import { Card, Icon } from "react-native-elements";
-import { connect } from 'react-redux';
-import { baseUrl } from '../shared/baseUrl';
-import { postFavorite } from '../redux/ActionCreators';
+import { COMMENTS } from "../shared/comments";
+import { connect } from "react-redux";
+import { baseUrl } from "../shared/baseUrl";
+import { postFavorite } from "../redux/ActionCreators";
 
-const mapStateToProps = state => {
-    return {
-        campsites: state.campsites,
-        comments: state.comments,
-        favorites: state.favorites
-    };
+const mapStateToProps = (state) => {
+  return {
+    campsites: state.campsites,
+    comments: state.comments,
+    favorites: state.favorites
+  };
 };
 
 const mapDispatchToProps = {
-  postFavorite: campsiteId => (postFavorite(campsiteId))
+  postFavorite: (campsiteId) => postFavorite(campsiteId)
 };
 
 function RenderCampsite(props) {
-  const {campsite} = props;
-  console.log('campsite',campsite)
+  const { campsite } = props;
+  console.log("campsite", campsite);
   if (campsite) {
-      return (
-          <Card
-              featuredTitle={campsite.name}
-              image={{uri: baseUrl + campsite.image}}>
-              <Text style={{margin: 10}}>
-                  {campsite.description}
-              </Text>
-              <Icon
-                  name={props.favorite ? 'heart' : 'heart-o'}
-                  type='font-awesome'
-                  color='#f50'
-                  raised
-                  reverse
-                  onPress={() => props.favorite ?
-                      console.log('Already set as a favorite') : props.markFavorite()}
-              />
-          </Card>
-      );
+    return (
+      <Card
+        featuredTitle={campsite.name}
+        image={{ uri: baseUrl + campsite.image }}
+      >
+        <Text style={{ margin: 10 }}>{campsite.description}</Text>
+        <Icon
+          name={props.favorite ? "heart" : "heart-o"}
+          type="font-awesome"
+          color="#f50"
+          raised
+          reverse
+          onPress={() =>
+            props.favorite
+              ? console.log("Already set as a favorite")
+              : props.markFavorite()
+          }
+        />
+      </Card>
+    );
   }
   return <View />;
 }
@@ -67,13 +70,12 @@ function RenderComments({ comments }) {
 }
 
 class CampsiteInfo extends Component {
-  
   markFavorite(campsiteId) {
     this.props.postFavorite(campsiteId);
-}
+  }
 
   static navigationOptions = {
-    title: "Campsite Information",
+    title: "Campsite Information"
   };
 
   render() {
@@ -84,7 +86,6 @@ class CampsiteInfo extends Component {
     const comments = this.props.comments.comments.filter(
       (comment) => comment.campsiteId === campsiteId
     );
-    console.log('filtered campsites',campsite)
     return (
       <ScrollView>
         <RenderCampsite
