@@ -193,30 +193,6 @@
       "text": "I caught a world-record-breaking trout here on my last visit.",
       "author": "McKenzie Sebastian",
       "date": "2019-02-18T18:12Z"
-    },
-    {
-      "campsiteId": 1,
-      "rating": "4",
-      "author": "bo0z3",
-      "text": "It's a game of Roulette, so have a blast!",
-      "date": "2020-08-29T22:41:39.300Z",
-      "id": 20
-    },
-    {
-      "campsiteId": 3,
-      "rating": "5",
-      "author": "adfadfasdf",
-      "text": "adfadfdsfdsaf",
-      "date": "2020-08-30T00:52:38.946Z",
-      "id": 21
-    },
-    {
-      "campsiteId": 2,
-      "rating": "1",
-      "author": "adf",
-      "text": "asdf",
-      "date": "2020-08-31T10:26:56.142Z",
-      "id": 22
     }
   ],
   "partners": [
@@ -263,12 +239,11 @@
       "id": 0,
       "firstname": "Test",
       "lastname": "Test",
-      "telnum": "12345",
+      "phoneNum": "12345",
       "email": "test@test.com",
       "agree": true,
       "contactType": "Email",
-      "message": "test",
-      "date": "2019-10-25T13:30Z"
+      "feedback": "test"
     }
   ]
 }
