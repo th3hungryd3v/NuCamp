@@ -7,12 +7,12 @@ import Loading from "./LoadingComponent";
 
 const mapStateToProps = (state) => {
   return {
-    campsites: state.campsites,
+    campsites: state.campsites
   };
 };
 class Directory extends Component {
   static navigationOptions = {
-    title: "Directory",
+    title: "Directory"
   };
 
   render() {

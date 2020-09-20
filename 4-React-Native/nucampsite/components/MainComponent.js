@@ -11,12 +11,12 @@ import {
   StyleSheet,
   Text,
   ScrollView,
-  Image,
+  Image
 } from "react-native";
 import {
   createStackNavigator,
   createDrawerNavigator,
-  DrawerItems,
+  DrawerItems
 } from "react-navigation";
 import { Icon } from "react-native-elements";
 import SafeAreaView from "react-native-safe-area-view";
@@ -25,14 +25,14 @@ import {
   fetchCampsites,
   fetchComments,
   fetchPromotions,
-  fetchPartners,
+  fetchPartners
 } from "../redux/ActionCreators";
 
 const mapDispatchToProps = {
   fetchCampsites,
   fetchComments,
   fetchPromotions,
-  fetchPartners,
+  fetchPartners
 };
 
 const DirectoryNavigator = createStackNavigator(
@@ -40,26 +40,27 @@ const DirectoryNavigator = createStackNavigator(
     Directory: {
       screen: Directory,
       navigationOptions: ({ navigation }) => ({
-        headerLeft:
+        headerLeft: (
           <Icon
             name="list"
             type="font-awesome"
             iconStyle={styles.stackIcon}
             onPress={() => navigation.toggleDrawer()}
           />
+        )
       })
     },
-    CampsiteInfo: { screen: CampsiteInfo },
+    CampsiteInfo: { screen: CampsiteInfo }
   },
   {
     initialRouteName: "Directory",
     navigationOptions: {
       headerStyle: {
-        backgroundColor: "#5637DD",
+        backgroundColor: "#5637DD"
       },
       headerTintColor: "#fff",
       headerTitleStyle: {
-        color: "#fff",
+        color: "#fff"
       }
     }
   }
@@ -67,96 +68,100 @@ const DirectoryNavigator = createStackNavigator(
 
 const HomeNavigator = createStackNavigator(
   {
-    Home: { screen: Home },
+    Home: { screen: Home }
   },
   {
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
-        backgroundColor: "#5637DD",
+        backgroundColor: "#5637DD"
       },
       headerTintColor: "#fff",
       headerTitleStyle: {
-        color: "#fff",
+        color: "#fff"
       },
-      headerLeft:
+      headerLeft: (
         <Icon
           name="home"
           type="font-awesome"
           iconStyle={styles.stackIcon}
           onPress={() => navigation.toggleDrawer()}
         />
+      )
     })
   }
 );
 
 const AboutNavigator = createStackNavigator(
   {
-    About: { screen: About },
+    About: { screen: About }
   },
   {
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
-        backgroundColor: "#5637DD",
+        backgroundColor: "#5637DD"
       },
       headerTintColor: "#fff",
       headerTitleStyle: {
-        color: "#fff",
+        color: "#fff"
       },
-      headerLeft:
+      headerLeft: (
         <Icon
           name="info-circle"
           type="font-awesome"
           iconStyle={styles.stackIcon}
           onPress={() => navigation.toggleDrawer()}
         />
+      )
     })
   }
 );
 
 const ContactNavigator = createStackNavigator(
   {
-    Contact: { screen: Contact },
+    Contact: { screen: Contact }
   },
   {
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
-        backgroundColor: "#5637DD",
+        backgroundColor: "#5637DD"
       },
       headerTintColor: "#fff",
       headerTitleStyle: {
-        color: "#fff",
+        color: "#fff"
       },
-      headerLeft:
+      headerLeft: (
         <Icon
           name="address-card"
           type="font-awesome"
           iconStyle={styles.stackIcon}
           onPress={() => navigation.toggleDrawer()}
         />
+      )
     })
   }
 );
 
 const ReservationNavigator = createStackNavigator(
   {
-    Reservation: { screen: Reservation },
+    Reservation: { screen: Reservation }
   },
   {
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
-        backgroundColor: "#5637DD",
+        backgroundColor: "#5637DD"
       },
       headerTintColor: "#fff",
       headerTitleStyle: {
-        color: "#fff",
+        color: "#fff"
       },
-      headerLeft:
+      headerLeft: (
         <Icon
           name="tree"
           type="font-awesome"
           iconStyle={styles.stackIcon}
           onPress={() => navigation.toggleDrawer()}
         />
+      )
     })
   }
 );
@@ -232,11 +237,11 @@ const MainNavigator = createDrawerNavigator(
           />
         )
       }
-    },
+    }
   },
   {
     drawerBackgroundColor: "#CEC8FF",
-    contentComponent: CustomDrawerContentComponent,
+    contentComponent: CustomDrawerContentComponent
   }
 );
 
@@ -253,8 +258,7 @@ class Main extends Component {
       <View
         style={{
           flex: 1,
-          paddingTop:
-            Platform.OS === "ios" ? 0 : Expo.Constants.statusBarHeight,
+          paddingTop: Platform.OS === "ios" ? 0 : Expo.Constants.statusBarHeight
         }}
       >
         <MainNavigator />
@@ -265,7 +269,7 @@ class Main extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   },
   drawerHeader: {
     backgroundColor: "#5637DD",
@@ -273,23 +277,23 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     flex: 1,
-    flexDirection: "row",
+    flexDirection: "row"
   },
   drawerHeaderText: {
     color: "#fff",
     fontSize: 24,
-    fontWeight: "bold",
+    fontWeight: "bold"
   },
   drawerImage: {
     margin: 10,
     height: 60,
-    width: 60,
+    width: 60
   },
   stackIcon: {
     marginLeft: 10,
     color: "#fff",
-    fontSize: 24,
-  },
+    fontSize: 24
+  }
 });
 
 export default connect(null, mapDispatchToProps)(Main);
