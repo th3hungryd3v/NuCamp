@@ -25,7 +25,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   postFavorite: (campsiteId) => postFavorite(campsiteId),
-  postComment: (campsiteId, rating, author, text) => postComment({comments})
+  postComment: (campsiteId, rating, author, text) => postComment(campsiteId, rating, author, text)
 };
 
 function RenderCampsite(props) {
@@ -119,13 +119,12 @@ class CampsiteInfo extends Component {
   }
 
   handleComment(campsiteId) {
-    this.postComment(campsiteId, rating, author, text);
+    this.props.postComment(campsiteId, this.state.rating, this.state.author, this.state.text);
     this.toggleModal();
   }
 
   resetForm() {
     this.setState({
-      showModal: false,
       rating: 5,
       author: "",
       text: ""
@@ -174,8 +173,8 @@ class CampsiteInfo extends Component {
               placeholder="Comment"
               leftIcon={{ type: "font-awesome", name: "comment-o" }}
               leftIconContainerStyle={{ paddingRight: 10 }}
-              onChangeText={(comment) => this.setState({ comment: comment })}
-              value={this.state.comment}
+              onChangeText={(text) => this.setState({ text: text })}
+              value={this.state.text}
             />
             <View style={{ margin: 10 }}>
               <Button

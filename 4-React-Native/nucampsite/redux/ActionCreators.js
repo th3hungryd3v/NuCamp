@@ -25,9 +25,9 @@ export const fetchComments = () => (dispatch) => {
     .catch((error) => dispatch(commentsFailed(error.message)));
 };
 
-export const addComment = (comment) => ({
+export const addComment = (newComment) => ({
   type: ActionTypes.ADD_COMMENT,
-  payload: comment
+  payload: newComment
 });
 
 export const postComment = (campsiteId, rating, author, text) => (dispatch) => {
@@ -38,7 +38,7 @@ export const postComment = (campsiteId, rating, author, text) => (dispatch) => {
     text
   };
   newComment.date = new Date().toISOString();
-  setTimeout(() => this.addComment(), 2000);
+  setTimeout(() => dispatch(addComment(newComment)), 2000);
 };
 
 export const commentsFailed = (errMess) => ({
