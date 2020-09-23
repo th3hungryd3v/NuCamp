@@ -1,5 +1,5 @@
-import React from "react";
-import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
+import React from 'react';
+import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 
 function Loading() {
   return (
@@ -12,14 +12,14 @@ function Loading() {
 
 const styles = StyleSheet.create({
   loadingView: {
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     flex: 1
   },
   loadingText: {
-    color: "#5637DD",
+    color: '#5637DD',
     fontSize: 14,
-    fontWeight: "bold"
+    fontWeight: 'bold'
   }
 });
 

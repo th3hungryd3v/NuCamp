@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { ScrollView, Text } from "react-native";
-import { Card } from "react-native-elements";
+import React, { Component } from 'react';
+import { ScrollView, Text } from 'react-native';
+import { Card } from 'react-native-elements';
 
 class Contact extends Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class Contact extends Component {
   }
 
   static navigationOptions = {
-    title: "Contact Us"
+    title: 'Contact Us'
   };
 
   render() {

@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { ScrollView, FlatList, Text } from "react-native";
-import { Card, ListItem } from "react-native-elements";
-import { connect } from "react-redux";
-import { baseUrl } from "../shared/baseUrl";
-import Loading from "./LoadingComponent";
+import React, { Component } from 'react';
+import { ScrollView, FlatList, Text } from 'react-native';
+import { Card, ListItem } from 'react-native-elements';
+import { connect } from 'react-redux';
+import { baseUrl } from '../shared/baseUrl';
+import Loading from './LoadingComponent';
 
 const mapStateToProps = (state) => {
   return {
@@ -29,7 +29,7 @@ function Mission() {
 
 class About extends Component {
   static navigationOptions = {
-    title: "About Us"
+    title: 'About Us'
   };
 
   render() {

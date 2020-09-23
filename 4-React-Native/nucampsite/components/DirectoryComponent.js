@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { View, FlatList, Text } from "react-native"; // wrap around all the list items
-import { Tile } from "react-native-elements"; // Used on every single item on the list
-import { connect } from "react-redux";
-import { baseUrl } from "../shared/baseUrl";
-import Loading from "./LoadingComponent";
+import React, { Component } from 'react';
+import { View, FlatList, Text } from 'react-native'; // wrap around all the list items
+import { Tile } from 'react-native-elements'; // Used on every single item on the list
+import { connect } from 'react-redux';
+import { baseUrl } from '../shared/baseUrl';
+import Loading from './LoadingComponent';
 
 const mapStateToProps = (state) => {
   return {
@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 };
 class Directory extends Component {
   static navigationOptions = {
-    title: "Directory"
+    title: 'Directory'
   };
 
   render() {
@@ -23,7 +23,7 @@ class Directory extends Component {
           title={item.name}
           caption={item.description}
           featured
-          onPress={() => navigate("CampsiteInfo", { campsiteId: item.id })}
+          onPress={() => navigate('CampsiteInfo', { campsiteId: item.id })}
           imageSrc={{ uri: baseUrl + item.image }}
         />
       );

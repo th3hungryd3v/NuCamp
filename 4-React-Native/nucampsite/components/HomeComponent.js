@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { View, Text, ScrollView } from "react-native";
-import { Card } from "react-native-elements";
-import { connect } from "react-redux";
-import { baseUrl } from "../shared/baseUrl";
-import Loading from "./LoadingComponent";
+import React, { Component } from 'react';
+import { View, Text, ScrollView } from 'react-native';
+import { Card } from 'react-native-elements';
+import { connect } from 'react-redux';
+import { baseUrl } from '../shared/baseUrl';
+import Loading from './LoadingComponent';
 
 const mapStateToProps = (state) => {
   return {
@@ -37,7 +37,7 @@ function RenderItem(props) {
 }
 class Home extends Component {
   static navigationOptions = {
-    title: "Home"
+    title: 'Home'
   };
 
   render() {
