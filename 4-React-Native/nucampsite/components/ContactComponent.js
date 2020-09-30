@@ -20,7 +20,7 @@ class Contact extends Component {
       body: 'To whom it may concern:'
     });
   }
-  
+
   render() {
     return (
       <ScrollView>
