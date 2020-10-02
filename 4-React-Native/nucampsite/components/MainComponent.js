@@ -13,7 +13,9 @@ import {
   StyleSheet,
   Text,
   ScrollView,
-  Image
+  Image,
+  Alert,
+  ToastAndroid
 } from 'react-native';
 import {
   createStackNavigator,
@@ -29,6 +31,7 @@ import {
   fetchPromotions,
   fetchPartners
 } from '../redux/ActionCreators';
+import NetInfo from '@react-native-community/netinfo';
 
 const mapDispatchToProps = {
   fetchCampsites,
@@ -198,7 +201,7 @@ const LoginNavigator = createStackNavigator(
     Login: { screen: Login }
   },
   {
-    navigationOptions: ({navigation}) => ({
+    navigationOptions: ({ navigation }) => ({
       headerStyle: {
         backgroundColor: '#5637DD'
       },
@@ -206,12 +209,14 @@ const LoginNavigator = createStackNavigator(
       headerTitleStyle: {
         color: '#fff'
       },
-      headerLeft: <Icon 
-        name='sign-in'
-        type='font-awesome'
-        iconStyle={styles.stackIcon}
-        onPress={() => navigation.toggleDrawer()}
-      />
+      headerLeft: (
+        <Icon
+          name="sign-in"
+          type="font-awesome"
+          iconStyle={styles.stackIcon}
+          onPress={() => navigation.toggleDrawer()}
+        />
+      )
     })
   }
 );
@@ -244,7 +249,12 @@ const MainNavigator = createDrawerNavigator(
       screen: LoginNavigator,
       navigationOptions: {
         drawerIcon: ({ tintColor }) => (
-          <Icon name="sign-in" type="font-awesome" size={24} color={tintColor} />
+          <Icon
+            name="sign-in"
+            type="font-awesome"
+            size={24}
+            color={tintColor}
+          />
         )
       }
     },
@@ -319,7 +329,45 @@ class Main extends Component {
     this.props.fetchComments();
     this.props.fetchPartners();
     this.props.fetchPromotions();
+
+    NetInfo.fetch().then((connectionInfo) => {
+      Platform.OS === 'ios'
+        ? Alert.alert('Initial Network Connectivity Type:', connectionInfo.type)
+        : ToastAndroid.show(
+            'Initial Network Connectivity Type: ' + connectionInfo.type,
+            ToastAndroid.LONG
+          );
+    });
+
+    this.unsubscribeNetInfo = NetInfo.addEventListener((connectionInfo) => {
+      this.handleConnectivityChange(connectionInfo);
+    });
   }
+
+  componentWillUnmount() {
+    this.unsubscribeNetInfo();
+  }
+
+  handleConnectivityChange = (connectionInfo) => {
+    let connectionMsg = 'You are now connected to an active network.';
+    switch (connectionInfo.type) {
+      case 'none':
+        connectionMsg = 'No network connection is active.';
+        break;
+      case 'unkonwn':
+        connectionMsg = 'The network connection state is now unkwown.';
+        break;
+      case 'cellular':
+        connectionMsg = 'You are now connected to a cellular network.';
+        break;
+      case 'wifi':
+        connectionMsg = 'You are now connected to a WiFi network.';
+        break;
+    }
+    Platform.OS === 'ios'
+      ? Alert.alert('Connection Change:', connectionMsg)
+      : ToastAndroid.show(connectionMsg, ToastAndroid.LONG);
+  };
 
   render() {
     return (
