@@ -1,12 +1,16 @@
 const express = require('express'); // File path is not need because we already installed the express framework, so Node already knows automatically where to look.
+const morgan = require('morgan');
 
 const hostname = 'localhost'; // the server hostname as a const variable
 const port = 3000; // port the server will be listening on
 
 const app = express(); //returns a express server application that will be available to us, in a (const) variable named app.
+app.use(morgan('dev'));
+
+app.use(express.static(__dirname + '/public')); // refers to the absolute path of the current directory of the file that it's in -> this is all we need to serve static files from the 'public' folder 
 
 app.use((req, res) => {
-  console.log(req.headers);
+  // console.log(req.headers); -> morgan will now handle this
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/html');
   res.end('<html><body><h1>This is an Express Server</h1></body></html>');
