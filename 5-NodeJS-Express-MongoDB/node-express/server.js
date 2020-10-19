@@ -5,7 +5,6 @@ const campsiteRouter = require('./routes/campsiteRouter');
 const promotionRouter = require('./routes/promotionRouter');
 const partnerRouter = require('./routes/partnerRouter');
 
-
 const hostname = 'localhost';
 const port = 3000;
 
@@ -13,52 +12,20 @@ const app = express();
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
-app.use('/campsites', campsiteRouter);
+app.use(express.static(__dirname + '/public'));
+app.use('/campsites', campsiteRouter); 
 app.use('/promotions', promotionRouter);
 app.use('/partners', partnerRouter);
 
-app.use(express.static(__dirname + '/public'));
-
-
-
-
-
-// app.use((req, res) => {
-//     res.statusCode = 200;
-//     res.setHeader('Content-Type', 'text/html');
-//     res.end('<html><body><h1>This is an Express Server</h1></body></html>');
-// });
-
 app.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+app.use((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html');
+    res.end('<html><body><h1>This is an Express Server</h1></body></html>');
+});
 
 // const express = require('express'); // File path is not need because we already installed the express framework, so Node already knows automatically where to look.
 // const morgan = require('morgan'); //
@@ -85,7 +52,7 @@ app.listen(port, hostname, () => {
 //   res.end(`Will add the campsite: ${req.body.name} with description: ${req.body.description}`);
 // });
 
-// app.use(express.static(__dirname + '/public')); // refers to the absolute path of the current directory of the file that it's in -> this is all we need to serve static files from the 'public' folder 
+// app.use(express.static(__dirname + '/public')); // refers to the absolute path of the current directory of the file that it's in -> this is all we need to serve static files from the 'public' folder
 
 // app.use((req, res) => {
 //   // console.log(req.headers); -> morgan will now handle this
