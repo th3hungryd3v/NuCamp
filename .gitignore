@@ -3,3 +3,4 @@ localhost.key
 localhost.pem
 **/node_modules
 dist
+**/mongodb
