@@ -3,4 +3,4 @@ localhost.key
 localhost.pem
 **/node_modules
 dist
-**/mongodb
+**/mongodb/data/journal/*.log
