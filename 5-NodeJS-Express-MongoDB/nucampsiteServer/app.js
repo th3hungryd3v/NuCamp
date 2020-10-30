@@ -20,8 +20,9 @@ const connect = mongoose.connect(url, {
   useUnifiedTopology: true
 });
 
-connect.then(() => console.log('Connected correctly to server'),
-    err => console.log(err)
+connect.then(
+  () => console.log('Connected correctly to server'),
+  (err) => console.log(err)
 );
 
 var app = express();
@@ -33,23 +34,28 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser('12345-67890-09876-54321')); // secret key used can be any String
 
 // this is where we'll add Auth, because from this point on we're actually sending info back
 function auth(req, res, next) {
-    console.log(req.headers); 
+  if (!req.signedCookies.user) {
+    // signedCookies Object is provided by cookieParser() which will automatically parse a signed cookie from the req
+    console.log(req.headers);
     const authHeader = req.headers.authorization;
     if (!authHeader) {
       const err = new Error('You are not authenticated!');
       res.setHeader('WWW-Authenticate', 'Basic');
-      err.status = 401; // HTTP 401 Unauthorized client error status response 
+      err.status = 401; // HTTP 401 Unauthorized client error status response
       return next(err);
     }
-// parse the authHeader and then validate the username:password, create a new array called auth === ['username', 'password']
-    const auth = Buffer.from(authHeader.split(' ')[1], 'base64').toString().split(':');
+    // parse the authHeader and then validate the username:password, create a new array called auth === ['username', 'password']
+    const auth = Buffer.from(authHeader.split(' ')[1], 'base64')
+      .toString()
+      .split(':');
     const user = auth[0];
     const pass = auth[1];
     if (user === 'admin' && pass === 'password') {
+      res.cookie('user', 'admin', { signed: true });
       return next(); // authorized
     } else {
       const err = new Error('You are not authenticated');
@@ -57,7 +63,16 @@ function auth(req, res, next) {
       err.status = 401;
       return next(err);
     }
-
+  } else {
+    if (req.signedCookies.user === 'admin') {
+      return next();
+    } else {
+      const err = new Error('You are not authenticated');
+      // res.setHeader('WWW-Authenticate', 'Basic');
+      err.status = 401;
+      return next(err);
+    }
+  }
 }
 // AUTH Function Call
 app.use(auth);
