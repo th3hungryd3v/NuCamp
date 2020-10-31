@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session); //
+const passport = require('passport');
+const authenticate = require('./authenticate');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -45,14 +47,17 @@ app.use(session({
     store: new FileStore()
 }));
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 
 // this is where we'll add Auth, because from this point on we're actually sending info back
 function auth(req, res, next) {
-  console.log(req.session);
-  if (!req.session.user) { // signedCookies
+  console.log(req.user); // req.session
+  if (!req.user) { // signedCookies, session
     // signedCookies Object is provided by cookieParser() which will automatically parse a signed cookie from the req
     // Now being handled by userRouter
     // console.log(req.headers);
@@ -79,14 +84,14 @@ function auth(req, res, next) {
     //   return next(err);
     // }
      else {
-    if (req.session.user === 'authenticated') { // signedCookies
+    // if (req.session.user === 'authenticated') {  signedCookies
       return next();
-    } else {
-      const err = new Error('You are not authenticated');
-      // res.setHeader('WWW-Authenticate', 'Basic');
-      err.status = 401;
-      return next(err);
-    }
+    // } else {
+    //   const err = new Error('You are not authenticated');
+    //   // res.setHeader('WWW-Authenticate', 'Basic');
+    //   err.status = 401;
+    //   return next(err);
+    // }
   }
 }
 // AUTH Function Call
