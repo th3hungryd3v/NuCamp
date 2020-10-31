@@ -1,12 +1,9 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const session = require('express-session');
-const FileStore = require('session-file-store')(session); //
 const passport = require('passport');
-const authenticate = require('./authenticate');
+const config = require('./config');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -16,7 +13,7 @@ const promotionRouter = require('./routes/promotionRouter');
 
 const mongoose = require('mongoose');
 
-const url = 'mongodb://localhost:27017/nucampsite';
+const url = config.mongoUrl; // 'mongodb://localhost:27017/nucampsite'
 const connect = mongoose.connect(url, {
   useCreateIndex: true,
   useFindAndModify: false,
@@ -38,64 +35,12 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-// app.use(cookieParser('12345-67890-09876-54321')); secret key used can be any String
-app.use(session({
-    name: 'session-id',
-    secret: '12345-67890-09876-54321',
-    saveUninitialized: false,
-    resave: false,
-    store: new FileStore()
-}));
 
 app.use(passport.initialize());
-app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-
-// this is where we'll add Auth, because from this point on we're actually sending info back
-function auth(req, res, next) {
-  console.log(req.user); // req.session
-  if (!req.user) { // signedCookies, session
-    // signedCookies Object is provided by cookieParser() which will automatically parse a signed cookie from the req
-    // Now being handled by userRouter
-    // console.log(req.headers);
-    // const authHeader = req.headers.authorization;
-    // if (!authHeader) {
-      const err = new Error('You are not authenticated!');
-      // res.setHeader('WWW-Authenticate', 'Basic');
-      err.status = 401; // HTTP 401 Unauthorized client error status response
-      return next(err);
-    }
-    // parse the authHeader and then validate the username:password, create a new array called auth === ['username', 'password']
-    // const auth = Buffer.from(authHeader.split(' ')[1], 'base64')
-    //   .toString()
-    //   .split(':');
-    // const user = auth[0];
-    // const pass = auth[1];
-    // if (user === 'admin' && pass === 'password') {
-    //   req.session.user = 'admin';// res.cookie('user', 'admin', { signed: true });
-    //   return next(); // authorized
-    // } else {
-    //   const err = new Error('You are not authenticated');
-    //   res.setHeader('WWW-Authenticate', 'Basic');
-    //   err.status = 401;
-    //   return next(err);
-    // }
-     else {
-    // if (req.session.user === 'authenticated') {  signedCookies
-      return next();
-    // } else {
-    //   const err = new Error('You are not authenticated');
-    //   // res.setHeader('WWW-Authenticate', 'Basic');
-    //   err.status = 401;
-    //   return next(err);
-    // }
-  }
-}
-// AUTH Function Call
-app.use(auth);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/campsites', campsiteRouter);
