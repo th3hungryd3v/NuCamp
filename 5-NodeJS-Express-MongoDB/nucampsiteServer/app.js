@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session');
+const FileStore = require('session-file-store')(session); //
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -34,11 +36,18 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser('12345-67890-09876-54321')); // secret key used can be any String
-
+// app.use(cookieParser('12345-67890-09876-54321')); secret key used can be any String
+app.use(session({
+    name: 'session-id',
+    secret: '12345-67890-09876-54321',
+    saveUninitialized: false,
+    resave: false,
+    store: new FileStore()
+}))
 // this is where we'll add Auth, because from this point on we're actually sending info back
 function auth(req, res, next) {
-  if (!req.signedCookies.user) {
+  console.log(req.session);
+  if (!req.session.user) { // signedCookies
     // signedCookies Object is provided by cookieParser() which will automatically parse a signed cookie from the req
     console.log(req.headers);
     const authHeader = req.headers.authorization;
@@ -55,7 +64,7 @@ function auth(req, res, next) {
     const user = auth[0];
     const pass = auth[1];
     if (user === 'admin' && pass === 'password') {
-      res.cookie('user', 'admin', { signed: true });
+      req.session.user = 'admin';// res.cookie('user', 'admin', { signed: true });
       return next(); // authorized
     } else {
       const err = new Error('You are not authenticated');
@@ -64,7 +73,7 @@ function auth(req, res, next) {
       return next(err);
     }
   } else {
-    if (req.signedCookies.user === 'admin') {
+    if (req.session.user === 'admin') { // signedCookies
       return next();
     } else {
       const err = new Error('You are not authenticated');
