@@ -58,7 +58,7 @@ promotionRouter
       .catch((err) => next(err));
   })
 
-  .post((req, res) => {
+  .post(authenticate.verifyUser, (req, res) => {
     res.statusCode = 403;
     res.end(
       `POST operation not supported on /promotions/${req.params.promotionId}`
