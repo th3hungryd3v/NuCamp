@@ -1,6 +1,6 @@
 # NuCamp Bootcamp Main Directory
 
-This is the Base Directory where all my work during the NuCamp BootCamp will be placed.
+This is all the work I did for the first run of the full-stack bootcamp, I plan to do another run, as well as create more projects...
 
 ## Table of Contents:
 
@@ -16,3 +16,5 @@ This is the Base Directory where all my work during the NuCamp BootCamp will be 
 
 By:
 xXth3hungryd3vXx
+
+Stay Tuned...
